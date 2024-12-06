@@ -1,0 +1,6 @@
+User-Agent: *
+User-agent: Googlebot
+User-agent: AdsBot-Googlebot
+Allow: /
+Sitemap: https://site.ru/sitemap.xml
+Host: https://site.ru

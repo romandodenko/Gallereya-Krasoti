@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:type" content="website">
+  <meta name="language" content="Russian">
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="ключ">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Заголовок страницы">
+  <meta property="og:site_name" content="Описание страницы">
+  <meta property="og:url" content="https://site.ru/">
+  <meta property="og:image" content="https://site.ru/main.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Главная">
+  <meta property="og:image:type" content="image/png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Заголовок страницы">
+  <meta name="twitter:description" content="Описание страницы">
+  <meta name="twitter:site" content="https://site.ru/">
+  <meta name="twitter:image" content="https://site.ru/main.png">
+  <meta name="description" content="Описание страницы">
+  <title>Заголовок страницы</title>
+  <link rel="canonical" href="https://site.ru/">
+  <link rel="icon" href="./favicon.png" type="image/png">
+  <link rel="preload" href="./fonts/MinionPro-Italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/MinionPro-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/OpenSans-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/Cormorant-Italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/Cormorant-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/Cormorant-Light.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./resources/swiper/swiper.css">
+  <link rel="stylesheet" href="./css/main-min.css">
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=91917327-f7a2-42ba-b391-62f86c9c6dee&lang=ru_RU"></script>
+  <script defer src="./resources/gallery-fslightbox/fslightbox.js"></script>
+  <script src="./resources/animates/gsap/gsap.min.js"></script>
+  <script src="./resources/validate/new/just-validate.min.js"></script>
+  <script src="./resources/validate/inputmask.js"></script>
+  <script src="./resources/swiper/swiper.js"></script>
+  <script defer src="./js/main.js"></script>
+</head>
+
+<body>
+  <div class="page">
+    <!-- Начало header -->
+    <header class="header box-shadow">
+
+      <div class="popup-cookie">
+        <div class="popup-cookie__text tx-main MinionPro mb-16">
+          Используя данный сайт, вы даете согласие на использование файлов cookie, помогающих нам сделать его удобнее
+          для вас
+        </div>
+        <div class="popup-cookie__buttons">
+          <a class="popup-cookie__link but MinionPro" href="cookie.html" aria-label="Подробнее">
+            Подробнее
+          </a>
+          <button class="popup-cookie__button MinionPro but but_background" aria-label="Хорошо">
+            Хорошо
+          </button>
+        </div>
+      </div>
+
+      <div class="auth wrapper-form">
+        <div class="auth__close"></div>
+        <div class="auth__content">
+          <button class="auth__exit mb-32" aria-label="Закрыть попап авторизации">
+            <svg width="24" height="24" fill="currentColor">
+              <use xlink:href="./img/sprites/sprites.svg#exit"></use>
+            </svg>
+          </button>
+          <div class="auth__item auth__item_phone active">
+            <div class="auth__title mb-64-32 text-center tx-36-24 uppercase">
+              Авторизация
+            </div>
+            <form class="wrapper-form__form" method="POST" action="#!" id="auth_form" name="auth_form"
+              autocomplete="off" aria-label="Авторизация">
+              <div class="wrapper-form__inputs mb-16">
+                <label class="wrapper-form__label" for="auth_tel">
+                  <span class="input-circle-decor"></span>
+                  <input class="wrapper-form__input input" type="tel" name="Номер телефона:" id="auth_tel"
+                    placeholder="Номер телефона" required aria-label="Номер телефона">
+                </label>
+              </div>
+              <p class="OpenSans tx-main mb-32-16" style="color: var(--dark-main); opacity: .5;">
+                Введите ваш номер телефона, <br>
+                мы пришлем вам единоразовый код для входа
+              </p>
+              <button class="wrapper-form__button but but_background MinionPro mb-32-16" type="submit"
+                aria-label="Продолжить" style="min-width: 218px;">
+                продолжить
+              </button>
+              <p class="OpenSans tx-main mb-32-16" style="color: var(--dark-main); opacity: .5;">
+                Нажимая на кнопку, я принимаю <br>
+                Соглашение о конфиденциальности
+              </p>
+            </form>
+
+          </div>
+          <div class="auth__item auth__item_code">
+            <div class="auth__title mb-64-32 text-center tx-36-24 uppercase">
+              Код подтверждения
+            </div>
+            <form class="wrapper-form__form" method="POST" action="#!" id="code_form" name="code_form"
+              autocomplete="off" aria-label="Код подтверждения">
+              <div class="wrapper-form__inputs mb-16">
+                <label class="wrapper-form__label" for="code_code">
+                  <span class="input-circle-decor"></span>
+                  <input class="wrapper-form__input input" type="text" name="Код из письма:" id="code_code"
+                    placeholder="Код из письма" required aria-label="Код из письма">
+                </label>
+              </div>
+              <p class="OpenSans tx-main mb-32-16" style="color: var(--dark-main); opacity: .5;">
+                На номер +7 *** *** 30-05 отправлено смс-сообщение <br>
+                с кодом подтверждения. Введите код <br>
+                и нажмите “Подтвердить”
+              </p>
+              <div class="wrapper-form__flex mb-32-16">
+                <button class="wrapper-form__button but but_background MinionPro" type="submit" aria-label="Подтвердить"
+                  style="min-width: 218px;">
+                  подтвердить
+                </button>
+                <button class="wrapper-form__button wrapper-form__button_cancel but MinionPro" type="button"
+                  aria-label="Отмена" style="min-width: 218px;">
+                  отмена
+                </button>
+              </div>
+              <p class="timer OpenSans tx-main mb-32-16">
+                Отправить повторно можно через <span>60</span> сек.
+              </p>
+            </form>
+            <button class="auth__retry disabled but but_background MinionPro" type="button"
+              aria-label="Отправить повторно">
+              отправить повторно
+            </button>
+
+            <script>
+              const timer = document.querySelector(".timer span");
+
+              let timerValue = 60;
+
+              function startTimer(close = null) {
+
+                let funTimer = setInterval(() => {
+                  if (document.querySelector(".auth__item_code").classList.contains("active")) {
+                    if (timerValue !== 0) {
+                      timerValue--
+                      timer.innerHTML = timerValue;
+                    } else {
+                      document.querySelector(".auth__retry") ? document.querySelector(".auth__retry").classList
+                        .remove("disabled") : "";
+                      clearTimeout(funTimer);
+                      // тут происходит если таймер достиг 0 и появилась кнопка при клике на которую перезапускается таймер
+                    }
+                  } else {
+                    clearTimeout(funTimer);
+                    timerValue = 60;
+                    timer.innerHTML = 60;
+                  }
+                }, 1000)
+
+                if (close !== null) {
+                  clearTimeout(funTimer);
+                  timerValue = 60;
+                  timer.innerHTML = 60;
+                }
+
+              }
+
+
+              document.addEventListener("click", function (e) {
+
+                const elementInteractive = e.target;
+
+                if (elementInteractive.closest(".auth__retry")) {
+                  timerValue = 60;
+                  timer.innerHTML = 60;
+                  startTimer();
+                  document.querySelector(".auth__retry") ? document.querySelector(".auth__retry").classList
+                    .add("disabled") : "";
+                  // тут происходит код при повторной отправки проверочного кода
+                }
+
+                if (elementInteractive.closest(".wrapper-form__button_cancel")) {
+                  document.querySelector(".auth__item_phone") ? document.querySelector(".auth__item_phone")
+                    .classList.add("active") : "";
+                  document.querySelector(".auth__item_code") ? document.querySelector(".auth__item_code").classList
+                    .remove("active") : "";
+                  startTimer(1)
+                  timerValue = 60;
+                  timer.innerHTML = 60;
+                }
+              })
+
+              const authForm = document.querySelector("#auth_form");
+              const authFormTel = authForm.querySelector("input[type='tel']");
+              const authFormsMask = new Inputmask("+7(999)999-99-99");
+              authFormsMask.mask(authFormTel);
+
+              const validatorAuth = new JustValidate(authForm, {});
+
+              validatorAuth
+                .addField('#auth_tel', [{
+                    rule: 'required',
+                    value: true,
+                    errorMessage: 'Введите ваш телефон',
+                  },
+                  {
+                    rule: 'function',
+                    validator: function () {
+                      const phone = authFormTel.inputmask.unmaskedvalue();
+                      return phone.length === 10;
+                    },
+                    errorMessage: 'Введите корректный телефон',
+                  },
+                ])
+                .onSuccess((event) => { // Если форма проходит валидацию то происходит код ниже
+
+                  document.querySelector(".auth__item_phone") ? document.querySelector(".auth__item_phone").classList
+                    .remove("active") : "";
+
+                  document.querySelector(".auth__item_code") ? document.querySelector(".auth__item_code").classList
+                    .add("active") : "";
+
+                  startTimer();
+
+                  // document.querySelector(".status-send") ? document.querySelector(".status-send").classList.add(
+                  //     "active") :
+                  //   '';
+
+                  // document.querySelector(".status-send-preload") ? document.querySelector(".status-send-preload")
+                  //   .classList
+                  //   .add("active") : '';
+
+                  // let formData = new FormData(event.target);
+
+                  // let xhr = new XMLHttpRequest();
+
+                  // xhr.onreadystatechange = function () {
+                  //   if (xhr.readyState === 4) {
+                  //     if (xhr.status === 200) {
+                  //       document.querySelector(".status-send-preload") ? document.querySelector(
+                  //           ".status-send-preload")
+                  //         .classList.remove("active") : '';
+                  //       document.querySelector(".status-send-okay") ? document.querySelector(".status-send-okay")
+                  //         .classList
+                  //         .add("active") : '';
+                  //     } else {
+                  //       document.querySelector(".status-send-preload") ? document.querySelector(
+                  //           ".status-send-preload")
+                  //         .classList.remove("active") : '';
+                  //       document.querySelector(".status-send-error") ? document.querySelector(".status-send-error")
+                  //         .classList.add("active") : '';
+                  //     }
+                  //   }
+                  // }
+
+                  // xhr.open('POST', './mail.php', true);
+                  // xhr.send(formData);
+
+                  // event.target.reset();
+                })
+
+              let isCode = "ssSSSSS";
+
+              const codeForm = document.querySelector("#code_form");
+
+              const validatorCode = new JustValidate(codeForm, {});
+
+              validatorCode
+                .addField('#code_code', [{
+                  validator: (value) => { // Своя проверка, будет работать как rule
+                    const codeInner = document.getElementById("code_code");
+                    return Boolean(codeInner.value === isCode)
+                  },
+                  errorMessage: 'Введите код из смс',
+                }, ])
+                .onSuccess((event) => { // Если форма проходит валидацию то происходит код ниже
+
+                  document.querySelector(".auth__item_phone") ? document.querySelector(".auth__item_phone").classList
+                    .add("active") : "";
+
+                  document.querySelector(".auth__item_code") ? document.querySelector(".auth__item_code").classList
+                    .remove("active") : "";
+
+                  document.querySelector(".auth") ? document.querySelector(".auth").classList
+                    .remove("active") : "";
+
+                  startTimer()
+
+                  // document.querySelector(".status-send") ? document.querySelector(".status-send").classList.add(
+                  //     "active") :
+                  //   '';
+
+                  // document.querySelector(".status-send-preload") ? document.querySelector(".status-send-preload")
+                  //   .classList
+                  //   .add("active") : '';
+
+                  // let formData = new FormData(event.target);
+
+                  // let xhr = new XMLHttpRequest();
+
+                  // xhr.onreadystatechange = function () {
+                  //   if (xhr.readyState === 4) {
+                  //     if (xhr.status === 200) {
+                  //       document.querySelector(".status-send-preload") ? document.querySelector(
+                  //           ".status-send-preload")
+                  //         .classList.remove("active") : '';
+                  //       document.querySelector(".status-send-okay") ? document.querySelector(".status-send-okay")
+                  //         .classList
+                  //         .add("active") : '';
+                  //     } else {
+                  //       document.querySelector(".status-send-preload") ? document.querySelector(
+                  //           ".status-send-preload")
+                  //         .classList.remove("active") : '';
+                  //       document.querySelector(".status-send-error") ? document.querySelector(".status-send-error")
+                  //         .classList.add("active") : '';
+                  //     }
+                  //   }
+                  // }
+
+                  // xhr.open('POST', './mail.php', true);
+                  // xhr.send(formData);
+
+                  // event.target.reset();
+                })
+            </script>
+          </div>
+        </div>
+      </div>
+
+      <div class="popup">
+        <div class="popup__close"></div>
+        <div class="popup__content">
+          <button class="popup__exit mb-24" aria-label="Закрыть попап">
+            <svg width="24" height="24" fill="currentColor" stroke="currentColor">
+              <use xlink:href="./img/sprites/sprites.svg#exit"></use>
+            </svg>
+          </button>
+          <div class="popup__title mb-32 uppercase tx-32-20">
+            Запишитесь на консультацию <br>
+            или понравившуюся процедуру
+          </div>
+          <p class="popup__text mb-32 tx-main MinionPro">
+            Введите контактную информацию и мы свяжемся с Вами!
+          </p>
+          <div class="wrapper-form" style="background-color: transparent;">
+            <div class="wrapper-form__content content-form">
+              <form class="wrapper-form__form" method="POST" action="#!" id="reading_form" name="reading_form"
+                autocomplete="off" aria-label="Запишитесь на консультацию или процедуру">
+                <input type="hidden" name="Откуда пришло письмо"
+                  value="Форма: Запишитесь на консультацию или процедуру">
+                <div class="wrapper-form__top mb-16">
+                  <div class="wrapper-form__inputs">
+                    <label class="wrapper-form__label" for="reading_name">
+                      <span class="input-circle-decor"></span>
+                      <input class="wrapper-form__input input" type="text" name="Имя:" id="reading_name"
+                        placeholder="Имя" required aria-label="Имя">
+                    </label>
+                    <label class="wrapper-form__label" for="reading_tel">
+                      <span class="input-circle-decor"></span>
+                      <input class="wrapper-form__input input" type="tel" name="Номер_телефона:" id="reading_tel"
+                        placeholder="Номер телефона" required aria-label="Номер телефона">
+                    </label>
+                  </div>
+                  <button class="wrapper-form__button but MinionPro" type="submit" aria-label="Записаться">
+                    записаться
+                  </button>
+                </div>
+                <div class="wrapper-form__checkboxs">
+                  <div class="wrapper-checkbox tx-16 OpenSans mb-16">
+                    <input class="wrapper-checkbox__checkbox inf-pol" type="checkbox" name="Информационная политика">
+                    <span class="wrapper-checkbox__decor"></span>
+                    Подтверждаю, что ознакомлен(а) с Информационной политикой
+                  </div>
+                  <div class="wrapper-checkbox tx-16 OpenSans">
+                    <input class="wrapper-checkbox__checkbox ysl-pers-dan" type="checkbox"
+                      name="Условия обработки персональных данных">
+                    <span class="wrapper-checkbox__decor"></span>
+                    Согласен(на) с Условиями обработки персональных данных
+                  </div>
+                </div>
+              </form>
+
+              <script>
+                const readingForm = document.querySelector("#reading_form");
+                const readingFormTel = readingForm.querySelector("input[type='tel']");
+                const readingFormsMask = new Inputmask("+7(999)999-99-99");
+                readingFormsMask.mask(readingFormTel);
+
+                const validatorReading = new JustValidate(readingForm, {});
+
+                validatorReading
+                  .addField('#reading_name', [{ // можно использовать классы вместо ид
+                    rule: 'required',
+                    errorMessage: 'Введите ваше имя',
+                  }])
+                  .addField(readingForm.querySelector(".inf-pol"), [{
+                    validator: (value) => { // Своя проверка, будет работать как rule
+                      const ckeckPoint = readingForm.querySelector(".inf-pol");
+                      return Boolean(ckeckPoint.checked == true)
+                    },
+                    errorMessage: 'Обязательно',
+                  }, ])
+                  .addField(readingForm.querySelector(".ysl-pers-dan"), [{
+                    validator: (value) => { // Своя проверка, будет работать как rule
+                      const ckeckPoint = readingForm.querySelector(".ysl-pers-dan");
+                      return Boolean(ckeckPoint.checked == true)
+                    },
+                    errorMessage: 'Обязательно',
+                  }, ])
+                  .addField('#reading_tel', [{
+                      rule: 'required',
+                      value: true,
+                      errorMessage: 'Введите ваш телефон',
+                    },
+                    {
+                      rule: 'function',
+                      validator: function () {
+                        const phone = readingFormTel.inputmask.unmaskedvalue();
+                        return phone.length === 10;
+                      },
+                      errorMessage: 'Введите корректный телефон',
+                    },
+                  ])
+                  .onSuccess((event) => { // Если форма проходит валидацию то происходит код ниже
+                    document.querySelector(".status-send") ? document.querySelector(".status-send").classList.add(
+                        "active") :
+                      '';
+
+                    document.querySelector(".status-send-preload") ? document.querySelector(".status-send-preload")
+                      .classList
+                      .add("active") : '';
+
+                    let formData = new FormData(event.target);
+
+                    let xhr = new XMLHttpRequest();
+
+                    xhr.onreadystatechange = function () {
+                      if (xhr.readyState === 4) {
+                        if (xhr.status === 200) {
+                          document.querySelector(".status-send-preload") ? document.querySelector(
+                              ".status-send-preload")
+                            .classList.remove("active") : '';
+                          document.querySelector(".status-send-okay") ? document.querySelector(".status-send-okay")
+                            .classList
+                            .add("active") : '';
+                        } else {
+                          document.querySelector(".status-send-preload") ? document.querySelector(
+                              ".status-send-preload")
+                            .classList.remove("active") : '';
+                          document.querySelector(".status-send-error") ? document.querySelector(
+                              ".status-send-error")
+                            .classList.add("active") : '';
+                        }
+                      }
+                    }
+
+                    xhr.open('POST', './mail.php', true);
+                    xhr.send(formData);
+
+                    event.target.reset();
+                  })
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="status-send">
+        <div class="status-send__close"></div>
+        <div class="status-send__content">
+          <button class="status-send__exit mb-32" aria-label="Закрыть статусы отправок">
+            <svg width="24" height="24" fill="currentColor">
+              <use xlink:href="img/sprites/sprites.svg#exit"></use>
+            </svg>
+          </button>
+          <div class="status-send__item status-send-preload">
+            <div class="status-send__icon status-send__icon_animate mb-40-16">
+              <img src="./img/svg/preload.svg" width="50" height="50" title="Прелоад" alt="Прелоад">
+            </div>
+          </div>
+          <div class="status-send__item status-send-error">
+            <div class="status-send__icon mb-40-16">
+              <img src="./img/svg/error.svg" width="50" height="50" title="Ошибка" alt="Ошибка">
+            </div>
+            <p class="status-send__text OpenSans tx-16 text-center">
+              Произошла ошибка! Попробуйте еще раз.
+            </p>
+          </div>
+          <div class="status-send__item status-send-okay">
+            <div class="status-send__icon mb-40-16">
+              <img src="./img/svg/okay.svg" width="50" height="50" title="Успешно" alt="Успешно">
+            </div>
+            <p class="status-send__text OpenSans tx-16 text-center">
+              Спасибо! Успешно отправлено.
+            </p>
+          </div>
+          <div class="status-send__item status-send-save">
+            <div class="status-send__icon mb-40-16">
+              <img src="./img/svg/okay.svg" width="50" height="50" title="Прелоад" alt="Прелоад">
+            </div>
+            <p class="status-send__text OpenSans tx-16 text-center">
+              Изменения сохранены
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="remove-popup">
+        <div class="remove-popup__close"></div>
+        <div class="remove-popup__content">
+          <div class="remove-popup__text MinionPro tx-main mb-32-16">
+            Подтвердите удаление
+          </div>
+          <button class="remove-popup__button mb-16 remove-popup__button_remove but" aria-label="Подтверждаю">
+            Подтверждаю
+          </button>
+          <button class="remove-popup__button remove-popup__button_cancel but but_background"
+            aria-label="Отменить действие">
+            Отменить действие
+          </button>
+        </div>
+      </div>
+
+      <div class="header__container container">
+        <div class="header__left">
+          <a class="logo rd-upload" href="/" aria-label="Главная страница">
+            <img src="." data-rd-image="./img/svg/logotip-site-small.svg" width="60" height="33" title="Галерея красоты"
+              alt="Галерея красоты">
+          </a>
+          <button class="login tx-14 fw-600 OpenSans">
+            Авторизация
+          </button>
+          <!-- <div class="nav nav_cabinet wrapper-dropdown" style="position: relative;">
+            <button class="nav__link tx-14 fw-600 OpenSans" aria-label="О нас">
+              Личный кабинет
+            </button>
+            <div class="dropdown dropdown-nav">
+              <button class="dropdown__exit-menu" aria-label="Закрыть скрытое меню">
+                <svg width="24" height="24" fill="currentColor">
+                  <use xlink:href="./img/sprites/sprites.svg#exit"></use>
+                </svg>
+              </button>
+              <div class="dropdown__top">
+                <a class="dropdown__link tx-14-18 OpenSans" href="cabinet-basket.html" aria-label="Корзина">
+                  Корзина
+                </a>
+                <a class="dropdown__link tx-14-18 OpenSans" href="cabinet-favorite.html" aria-label="Избранное">
+                  Избранное
+                </a>
+              </div>
+              <ul class="dropdown__list" aria-label="О нас">
+                <li class="mb-8-16">
+                  <a class="dropdown__link tx-14-18 OpenSans" href="cabinet.html" aria-label="Профиль">
+                    Профиль
+                  </a>
+                </li>
+                <li class="mb-8-16">
+                  <a class="dropdown__link tx-14-18 OpenSans" href="cabinet-personal-data.html"
+                    aria-label="Личные данные">
+                    Личные данные
+                  </a>
+                </li>
+                <li class="mb-8-16">
+                  <a class="dropdown__link tx-14-18 OpenSans" href="cabinet-order.html" aria-label="Заказы">
+                    Заказы
+                  </a>
+                </li>
+                <li class="mb-8-16">
+                  <a class="dropdown__link tx-14-18 OpenSans" href="cabinet-deposit-card.html"
+                    aria-label="Депозитная карта">
+                    Депозитная карта
+                  </a>
+                </li>
+                <li class="mb-16-32">
+                  <a class="dropdown__link tx-14-18 OpenSans" href="cabinet-address.html" aria-label="Адреса">
+                    Адреса
+                  </a>
+                </li>
+                <li class="mb-8-16">
+                  <a class="dropdown__link tx-14-18 OpenSans" href="#!" aria-label="Выйти">
+                    Выйти
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div> -->
+        </div>
+        <div class="header__right">
+          <nav class="nav nav_none" aria-label="Навигация">
+            <ul class="nav__list" aria-label="Список навигации">
+              <li class="nav__item wrapper-dropdown">
+                <button class="nav__link tx-14-18 fw-600 OpenSans" aria-label="О нас">
+                  О нас
+                </button>
+                <div class="dropdown dropdown-nav">
+                  <ul class="dropdown__list" aria-label="О нас">
+                    <li class="mb-8-16">
+                      <a class="dropdown__link tx-14-18 OpenSans" href="about.html" aria-label="О нас">
+                        О нас
+                      </a>
+                    </li>
+                    <li class="mb-8-16">
+                      <a class="dropdown__link tx-14-18 OpenSans" href="specialists.html" aria-label="Специалисты">
+                        Специалисты
+                      </a>
+                    </li>
+                    <li class="mb-8-16">
+                      <a class="dropdown__link tx-14-18 OpenSans" href="vip-club.html" aria-label="Vip-клуб">
+                        Vip-клуб
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav__item wrapper-dropdown">
+                <button class="nav__link tx-14-18 fw-600 OpenSans" aria-label="Услуги">
+                  Услуги
+                </button>
+                <div class="dropdown dropdown-nav">
+                  <ul class="dropdown__list" aria-label="Услуги">
+                    <li class="mb-8-16">
+                      <a class="dropdown__link tx-14-18 OpenSans" href="services.html" aria-label="Услуги">
+                        Услуги
+                      </a>
+                    </li>
+                    <li class="mb-8-16">
+                      <a class="dropdown__link tx-14-18 OpenSans" href="services-category.html"
+                        aria-label="Безинъкционные процедуры">
+                        Безинъкционные процедуры
+                      </a>
+                    </li>
+                    <li class="mb-8-16">
+                      <a class="dropdown__link tx-14-18 OpenSans" href="services-category.html"
+                        aria-label="Инъекционные процедуры">
+                        Инъекционные процедуры
+                      </a>
+                    </li>
+                    <li class="mb-8-16">
+                      <a class="dropdown__link tx-14-18 OpenSans" href="services-category.html"
+                        aria-label="Аппаратные процедуры">
+                        Аппаратные процедуры
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav__item wrapper-dropdown">
+                <button class="nav__link tx-14-18 fw-600 OpenSans" aria-label="Каталог">
+                  Каталог
+                </button>
+                <div class="dropdown dropdown-nav">
+                  <ul class="dropdown__list" aria-label="Каталог">
+                    <li class="mb-8-16">
+                      <a class="dropdown__link tx-14-18 OpenSans" href="catalog.html" aria-label="Каталог">
+                        Каталог
+                      </a>
+                    </li>
+                    <li class="mb-8-16">
+                      <a class="dropdown__link tx-14-18 OpenSans" href="catalog-category.html"
+                        aria-label="Кожа вокруз глаз">
+                        Кожа вокруз глаз
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link tx-14-18 fw-600 OpenSans" href="contacts.html" aria-label="Контакты">
+                  Контакты
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <button class="header__button but OpenSans go-popup" aria-label="Записаться на консультацию">
+            Записаться на консультацию
+          </button>
+          <div class="wrapper-burger">
+            <button class="burger" aria-label="Скрытое меню">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <div class="dropdown dropdown-burger">
+              <button class="dropdown__exit-menu" aria-label="Закрыть скрытое меню">
+                <svg width="24" height="24" fill="currentColor">
+                  <use xlink:href="./img/sprites/sprites.svg#exit"></use>
+                </svg>
+              </button>
+              <ul class="dropdown__list" aria-label="Выпадающий список">
+                <li class="mb-8-16">
+                  <a class="dropdown__link tx-14-18 OpenSans" href="about.html" aria-label="О нас">
+                    О нас
+                  </a>
+                </li>
+                <li class="mb-8-16">
+                  <a class="dropdown__link tx-14-18 OpenSans" href="services.html" aria-label="Услуги">
+                    Услуги
+                  </a>
+                </li>
+                <li class="mb-8-16">
+                  <a class="dropdown__link tx-14-18 OpenSans" href="catalog.html" aria-label="Каталог">
+                    Каталог
+                  </a>
+                </li>
+                <li class="mb-8-16">
+                  <a class="dropdown__link tx-14-18 OpenSans" href="contacts.html" aria-label="Контакты">
+                    Контакты
+                  </a>
+                </li>
+                <li class="mb-8-16">
+                  <a class="dropdown__link tx-14-18 OpenSans" href="about.html#benefits" aria-label="Преимущества">
+                    Преимущества
+                  </a>
+                </li>
+                <li class="mb-8-16">
+                  <a class="dropdown__link tx-14-18 OpenSans" href="vacancies.html" aria-label="Вакансии">
+                    Вакансии
+                  </a>
+                </li>
+                <li class="mb-8-16">
+                  <a class="dropdown__link tx-14-18 OpenSans" href="specialists.html" aria-label="Специалисты">
+                    Специалисты
+                  </a>
+                </li>
+                <li class="mb-8-16">
+                  <a class="dropdown__link tx-14-18 OpenSans" href="idealnaya.html" aria-label="ИдеальнаЯ">
+                    ИдеальнаЯ
+                  </a>
+                </li>
+                <li class="mb-8-16">
+                  <a class="dropdown__link tx-14-18 OpenSans" href="medicines-and-equipment.html"
+                    aria-label="Препараты и оборудование">
+                    Препараты и оборудование
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Конец header -->
+    <main class="main">
+      <!-- Начало breadcrumb -->
+      <section class="breadcrumb rd-upload pb-64">
+        <div class="container">
+          <h2 class="visually-hidden">
+            Навигация
+          </h2>
+          <ul class="breadcrumb__list" aria-label="Список навигации">
+            <li class="breadcrumb__item">
+              <a class="breadcrumb__link OpenSans circle circle_after tx-14" href="/" aria-label="Главная">
+                Главная
+              </a>
+            </li>
+            <li class="breadcrumb__item">
+              <a class="breadcrumb__link OpenSans active circle_after circle tx-14" href="policy.html"
+                aria-label="Политика конфиденциальности">
+                Политика конфиденциальности
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- Конец breadcrumb -->
+
+      <!-- Начало policy -->
+      <section class="policy pb-128-64 pt-64-0">
+        <div class="container">
+          <h1 class="tx-36-24 uppercase mb-44 MinionPro">Политика конфиденциальности</h1>
+          <p class="tx-main mb-32-16">Последнее обновление: 04 ноября 2024 г.</p>
+          <p class="tx-main mb-32-16">Эта Политика конфиденциальности описывает Наши политики и процедуры по сбору,
+            использованию и раскрытию
+            Вашей
+            информации при использовании Вами Сервиса и рассказывает Вам о Ваших правах на конфиденциальность и о том,
+            как закон защищает Вас.
+          </p>
+          <p class="tx-main mb-64">Мы используем Ваши Персональные данные для предоставления и улучшения Сервиса.
+            Используя Сервис, Вы
+            соглашаетесь на
+            сбор и использование информации в соответствии с настоящей Политикой конфиденциальности. </p>
+          <h2 class="tx-32-20 mb-40-16 MinionPro">Толкование и определения</h2>
+          <h3 class="tx-24 mb-24 MinionPro">Толкование</h3>
+          <p class="tx-main mb-32-16">Слова, первая буква которых написана с заглавной буквы, имеют значения,
+            определенные
+            при следующих
+            условиях.
+            Следующие определения имеют одинаковое значение независимо от того, указаны ли они в единственном или
+            множественном числе.</p>
+          <h3 class="tx-24 mb-24 MinionPro">Определения</h3>
+          <p class="tx-main mb-32-16">Для целей настоящей Политики конфиденциальности:</p>
+          <ul class="mb-44">
+            <li class="mb-12">
+              <p class="tx-main mb-32-16"> Учетная запись означает уникальную учетную запись, созданную
+                для Вас для доступа к
+                нашему Сервису или частям нашего
+                Сервиса.</p>
+            </li>
+            <li class="mb-12">
+              <p class="tx-main mb-32-16">Аффилированное лицо означает организацию, которая
+                контролирует,
+                контролируется или
+                находится под общим контролем
+                со стороной, где «контроль» означает владение 50% или более акций, долей участия или
+                иных ценных бумаг, имеющих право голоса на выборах директоров или других управляющих органов.</p>
+            </li>
+            <li class="mb-12">
+              <p class="tx-main mb-32-16">Компания (именуемая либо «Компания», либо «Мы», либо «Нас»
+                или
+                «Наш» в настоящем
+                Соглашении) относится к Галерея красоты.</p>
+            </li>
+            <li class="mb-12">
+              <p class="tx-main mb-32-16">Файлы cookie — это небольшие файлы, которые размещаются на
+                Вашем компьютере, мобильном
+                устройстве или любом другом
+                устройстве веб-сайтом, содержащими сведения о Вашей истории просмотров на этом веб-сайте среди его
+                многочисленных
+                использований.</p>
+            </li>
+            <li class="mb-12">
+              <p class="tx-main mb-32-16">Страна относится к: Россия</p>
+            </li>
+            <li class="mb-12">
+              <p class="tx-main mb-32-16">Устройство означает любое устройство, которое может получить
+                доступ к Сервису,
+                например, компьютер, мобильный телефон или
+                цифровой планшет.</p>
+            </li>
+            <li class="mb-12">
+              <p class="tx-main mb-32-16">Персональные данные — это любая информация, которая относится
+                к
+                идентифицированному
+                или идентифицируемому
+
+                физическому лицу.</p>
+            </li>
+            <li class="mb-12">
+              <p class="tx-main mb-32-16">Услуга относится к Веб-сайту.</p>
+            </li>
+            <li class="mb-12">
+              <p class="tx-main mb-32-16">Поставщик услуг означает любое физическое или юридическое
+                лицо,
+                которое обрабатывает
+                данные от имени
+                Компании. Он относится к сторонним компаниям или лицам, нанятым Компанией для содействия
+                Услуге, предоставления Услуги от имени Компании, выполнения услуг, связанных с Услугой, или
+                помощи Компании в анализе того, как используется Услуга.</p>
+            </li>
+            <li class="mb-12">
+              <p class="tx-main mb-32-16">Данные об использовании относятся к данным, собираемым
+                автоматически, либо
+                генерируемым при использовании
+                Услуги, либо из самой инфраструктуры Услуги (например, продолжительность посещения страницы).</p>
+            </li>
+            <li class="mb-12">
+              <p class="tx-main mb-32-16">Веб-сайт относится к Галерея красоты, доступному с <a href="domen.site"
+                  rel="external nofollow noopener" target="_blank">domen.site</a></p>
+            </li>
+            <li class="mb-12">
+              <p class="tx-main mb-32-16">Вы означает лицо, получающее доступ или использующее Услугу,
+                или компанию или другое
+                юридическое лицо, от имени которого такое лицо получает доступ или использует Услугу, в зависимости от
+                обстоятельств.</p>
+            </li>
+          </ul>
+          <h2 class="tx-32-20 mb-40-16 MinionPro">Сбор и использование ваших персональных данных</h2>
+          <h3 class="tx-24 mb-24 MinionPro">Типы собираемых данных</h3>
+          <h4 class="tx-24 mb-24 MinionPro">Персональные данные</h4>
+          <p class="tx-main mb-32-16">При использовании нашего Сервиса мы можем попросить вас предоставить нам
+            определенную персональную
+            информацию, которая может быть использована для связи с вами или вашей идентификации. Персональная
+            информация может включать, помимо прочего:</p>
+          <ul class="mb-44">
+            <li class="mb-12">
+              <p class="tx-main mb-32-16">Адрес электронной почты</p>
+            </li>
+            <li class="mb-12">
+              <p class="tx-main mb-32-16">Данные об использовании</p>
+            </li>
+          </ul>
+          <h4 class="tx-24 mb-24 MinionPro">Данные об использовании</h4>
+          <p class="tx-main mb-32-16">Данные об использовании собираются автоматически при использовании Сервиса.</p>
+          <p class="tx-main mb-32-16">Данные об использовании могут включать такую ​​информацию, как IP-адрес вашего
+            устройства (например,
+            IP-адрес),
+            тип браузера, версия браузера, страницы нашего Сервиса, которые вы посещаете, время и дата вашего посещения,
+            время, проведенное на этих страницах, уникальные идентификаторы устройств и другие диагностические данные.
+          </p>
+          <p class="tx-main mb-32-16">Когда вы получаете доступ к Сервису с помощью мобильного устройства, Мы можем
+            автоматически собирать
+            определенную информацию, включая, помимо прочего, тип используемого вами мобильного устройства, уникальный
+            идентификатор вашего мобильного устройства, IP-адрес вашего мобильного устройства, вашу мобильную
+            операционную систему, тип используемого вами мобильного интернет-браузера, уникальный идентификаторы
+            устройств и другие диагностические данные.</p>
+          <p class="tx-main mb-32-16">Мы также можем собирать информацию, которую Ваш браузер отправляет всякий раз,
+            когда
+            Вы посещаете наш
+            Сервис или когда Вы получаете доступ к
+            Сервису с помощью мобильного устройства.</p>
+          <h4 class="tx-24 mb-24 MinionPro">Технологии отслеживания и файлы cookie</h4>
+          <p class="tx-main mb-32-16">Мы используем файлы cookie и аналогичные технологии отслеживания для отслеживания
+            активности на Нашем
+            Сервисе и хранения определенной
+            информации. Используемые технологии отслеживания — это маяки, теги и скрипты для сбора и отслеживания
+            информации, а также для улучшения и анализа Нашего Сервиса. Технологии, которые Мы используем, могут
+            включать:</p>
+          <ul class="mb-44">
+            <li class="tx-main mb-32-16">Файлы cookie или файлы cookie браузера. Файл cookie — это
+              небольшой
+              файл, размещенный
+              на Вашем Устройстве. Вы можете
+
+              дать указание Вашему браузеру отклонять все файлы cookie или указывать, когда отправляется файл cookie.
+              Однако, если Вы
+
+              не принимаете файлы cookie, Вы не сможете использовать некоторые части нашего Сервиса. Если вы не
+              настроили настройки своего браузера так, чтобы он отклонял файлы cookie, наш Сервис может использовать
+              файлы cookie.</li>
+            <li class="tx-main mb-32-16">Веб-маяки. Некоторые разделы нашего Сервиса и наши электронные
+              письма могут содержать
+              небольшие электронные файлы, известные как веб-маяки (также называемые прозрачными gif-файлами,
+              пиксельными тегами и однопиксельными gif-файлами),
+              которые позволяют Компании, например, подсчитывать пользователей, посетивших эти страницы или открывших
+              электронное письмо, и
+              для другой связанной статистики веб-сайта (например, для регистрации популярности определенного раздела и
+              проверки целостности системы и сервера).</li>
+          </ul>
+          <p class="tx-main mb-32-16">Файлы cookie могут быть «постоянными» или «сеансовыми». Постоянные файлы cookie
+            остаются на вашем
+            персональном компьютере или мобильном устройстве, когда вы выходите из сети, в то время как сеансовые файлы
+            cookie удаляются, как только вы
+            закрываете свой веб-браузер. Подробнее о файлах cookie можно узнать на <a
+              href="https://www.termsfeed.com/blog/cookies/#What_Are_Cookies" target="_blank">веб-сайте TermsFeed</a>
+
+            статье.</p>
+          <p class="tx-main mb-40">Мы используем как сеансовые, так и постоянные файлы cookie для целей, изложенных
+            ниже:</p>
+          <ul class="mb-44">
+            <li class="mb-40">
+              <p class="tx-main mb-32-16">Необходимые / основные файлы cookie</p>
+              <p class="tx-main mb-32-16">Тип: сеансовые файлы cookie</p>
+              <p class="tx-main mb-32-16">Администрирование: нами</p>
+              <p class="tx-main mb-32-16">Цель: эти файлы cookie необходимы для предоставления вам услуг, доступных
+                через
+                веб-сайт, и для
+                позволения вам использовать некоторые его функции. Они помогают аутентифицировать пользователей и
+                предотвращать мошенническое использование
+                аккаунтов пользователей. Без этих файлов cookie запрошенные вами услуги не могут быть предоставлены, и
+                мы
+                используем эти файлы cookie только для предоставления вам этих услуг.</p>
+            </li>
+            <li class="mb-40">
+              <p class="tx-main mb-32-16">Политика использования файлов cookie / Файлы cookie с уведомлением о
+                принятии</p>
+              <p class="tx-main mb-32-16">Тип: Постоянные файлы cookie</p>
+              <p class="tx-main mb-32-16">Администрирование: нами</p>
+              <p class="tx-main mb-32-16">Цель: Эти файлы cookie определяют, приняли ли пользователи использование
+                файлов
+                cookie на веб-сайте.
+              </p>
+            </li>
+            <li class="mb-40">
+              <p class="tx-main mb-32-16">Функции файлов cookie</p>
+              <p class="tx-main mb-32-16">Тип: Постоянные файлы cookie</p>
+              <p class="tx-main mb-32-16">Администрирование: нами</p>
+              <p class="tx-main mb-32-16">Цель: Эти файлы cookie позволяют нам запоминать выбор, который вы делаете при
+                использовании веб-сайта,
+                например, запоминать ваши данные для входа или языковые предпочтения. Цель этих файлов cookie —
+                предоставить Вам более персонализированный опыт и избежать необходимости повторно вводить свои
+                предпочтения каждый раз, когда Вы пользуетесь
+                Веб-сайтом.</p>
+            </li>
+          </ul>
+          <p class="tx-main mb-40">Для получения дополнительной информации о файлах cookie, которые мы используем, и
+            ваших вариантах
+            относительно файлов cookie, пожалуйста, посетите нашу Политику использования файлов cookie или раздел «Файлы
+            cookie» нашей Политики конфиденциальности.</p>
+          <h3 class="tx-24 mb-24 MinionPro">Использование Ваших персональных данных</h3>
+          <p class="tx-main mb-32-16">Компания может использовать Персональные данные в следующих целях:</p>
+          <ul class="mb-44">
+            <li class="mb-12">
+              <p class="tx-main mb-32-16">Для предоставления и поддержки нашего Сервиса, в том числе
+                для
+                мониторинга
+                использования нашего Сервиса.
+              </p>
+            </li>
+            <li class="mb-12">
+              <p class="tx-main mb-32-16">Для управления Вашей учетной записью: для управления Вашей
+                регистрацией в качестве
+                пользователя Сервиса. Персональные данные, которые вы предоставляете, могут предоставить вам доступ к
+                различным функциям Сервиса, которые
+                доступны вам как зарегистрированному пользователю.</p>
+            </li>
+            <li class="mb-12">
+              <p class="tx-main mb-32-16">Для исполнения контракта: разработка, соблюдение и заключение
+                контракта на покупку продуктов, товаров или услуг, которые вы приобрели, или любого другого контракта с
+                нами через Сервис.</p>
+            </li>
+            <li class="mb-12">
+              <p class="tx-main">Для связи с вами: Для связи с вами по электронной почте, по телефону, SMS или другим
+                эквивалентным
+                формам электронной связи, таким как push-уведомления мобильного приложения относительно обновлений
+                или информационных сообщений, связанных с функциями, продуктами или контрактными услугами, включая
+                обновления безопасности, когда это необходимо или разумно для их реализации.</p>
+            </li>
+            <li class="mb-12">
+              <p class="tx-main mb-32-16">Для предоставления вам новостей, специальных предложений и
+                общей информации о других
+                товарах,
+                услугах и мероприятиях, которые мы предлагаем, которые похожи на те, которые вы уже приобрели или о
+                которых
+                спрашивали, если вы не решили не получать такую ​​информацию.</p>
+            </li>
+            <li class="mb-12">
+              <p class="tx-main mb-32-16">Для управления Вашими запросами: Для обслуживания и
+                управления
+                Вашими запросами к Нам.
+              </p>
+            </li>
+            <li class="mb-12">
+              <p class="tx-main mb-32-16">Для передачи бизнеса: Мы можем использовать Вашу информацию
+                для
+                оценки или проведения
+                слияния,
+                отчуждения, реструктуризации, реорганизации, роспуска или другой продажи или передачи некоторых или всех
+                Наших
+                активов, будь то в качестве действующего предприятия или в рамках банкротства, ликвидации или
+                аналогичной процедуры, в
+                которой Персональные данные, хранящиеся у Нас о наших пользователях Сервиса, входят в число передаваемых
+                активов.</p>
+            </li>
+            <li class="mb-12">
+              <p class="tx-main mb-32-16">Для других целей: Мы можем использовать Вашу информацию для
+                других целей, таких как
+                анализ данных, выявление тенденций использования, определение эффективности наших рекламных кампаний и
+                для
+                оценки и улучшения нашего Сервиса, продуктов, услуг, маркетинга и вашего опыта.</p>
+            </li>
+          </ul>
+          <p class="tx-24 mb-24">Мы можем передавать Вашу личную информацию в следующих ситуации:</p>
+          <ul class="mb-44">
+            <li class="tx-main mb-12">С поставщиками услуг: Мы можем передавать Ваши персональные
+              данные
+              Поставщикам услуг
+              для мониторинга и анализа использования наших Услуг, для связи с Вами.</li>
+            <li class="tx-main mb-12">Для передачи бизнеса: Мы можем передавать Ваши персональные
+              данные
+              в
+              связи с любым слиянием, продажей активов Компании, финансированием или приобретением
+              всего или части Нашего бизнеса другой компании или во время переговоров.</li>
+            <li class="tx-main mb-12">С аффилированными лицами: Мы можем передавать Ваши данные Нашим
+              аффилированным лицам, и
+              в этом случае мы
+              потребуем от этих аффилированных лиц соблюдать настоящую Политику конфиденциальности. Аффилированные лица
+              включают Нашу материнскую компанию и любые
+              другие дочерние компании, партнеров по совместному предприятию или другие компании, которые Мы
+              контролируем или которые находятся под общим
+              контролем с Нами.</li>
+            <li class="tx-main mb-12">С деловыми партнерами: Мы можем делиться Вашей информацией с
+              Нашими
+              деловыми
+              партнерами, чтобы
+              предлагать Вам определенные продукты, услуги или акции.</li>
+            <li class="tx-main mb-12">С другими пользователями: когда Вы делитесь личной информацией
+              или
+              иным
+              образом
+              взаимодействуете в
+              общественных зонах с другими пользователями, такая информация может просматриваться всеми пользователями и
+              может быть публично распространена
+              за пределами.</li>
+            <li class="tx-main mb-12">С Вашего согласия: Мы можем раскрывать Вашу личную информацию для
+              любых
+              других целей с
+              Вашего согласия.</li>
+          </ul>
+          <h3 class="tx-24 mb-24 MinionPro">Хранение Ваших Персональных данных</h3>
+          <p class="tx-main mb-32-16">Компания будет хранить Ваши Персональные данные только в течение того времени,
+            которое необходимо для
+            целей, изложенных в
+            настоящей Политике конфиденциальности. Мы будем хранить и использовать Ваши персональные данные в объеме,
+            необходимом для соблюдения наших
+            юридических обязательств (например, если мы обязаны хранить ваши данные для соблюдения применимых законов),
+            разрешения споров и обеспечения соблюдения наших юридических соглашений и политик.</p>
+          <p class="tx-main mb-32-16">Компания также будет хранить Данные об использовании для целей внутреннего
+            анализа.
+            Данные об использовании
+            обычно хранятся
+            в течение более короткого периода времени, за исключением случаев, когда эти данные используются для
+            усиления безопасности или улучшения
+            функциональности Нашего Сервиса, или Мы юридически обязаны хранить эти данные в течение более длительного
+            периода времени.</p>
+          <h3 class="tx-24 mb-24 MinionPro">Передача Ваших персональных данных</h3>
+          <p class="tx-main mb-32-16">Ваша информация, включая Персональные данные, обрабатывается в операционных офисах
+            Компании и в любых
+            других
+            местах, где находятся стороны, участвующие в обработке. Это означает, что эта информация может быть
+            передана — и сохранена — на компьютерах, расположенных за пределами Вашего штата, провинции, страны или
+            другой
+            правительственной юрисдикции, где законы о защите данных могут отличаться от законов Вашей юрисдикции.</p>
+          <p class="tx-main mb-32-16">Ваше согласие с настоящей Политикой конфиденциальности, сопровождаемое Вашим
+            предоставлением такой
+            информации, означает Ваше
+            согласие на такую ​​передачу.</p>
+          <p class="tx-main mb-32-16">Компания предпримет все разумно необходимые шаги для обеспечения безопасного
+            обращения с Вашими данными и в
+            соответствии с настоящей Политикой конфиденциальности, и никакая передача Ваших Персональных данных не будет
+            осуществляться в организацию
+            или страну, если не будут приняты адекватные меры контроля, включая безопасность Ваших данных и другой
+            личной информации.</p>
+          <h3 class="tx-24 mb-24 MinionPro">Удаление Ваших Персональных данных</h3>
+          <p class="tx-main mb-32-16">Вы имеете право удалить или запросить, чтобы Мы помогли в удалении Персональных
+            данных, которые Мы собрали
+            о Вас.</p>
+          <p class="tx-main mb-32-16">Наш Сервис может предоставить Вам возможность удалить определенную информацию о
+            Вас
+            из Сервиса.</p>
+          <p class="tx-main mb-32-16">Вы можете обновить, изменить или удалить Вашу информацию в любое время, войдя в
+            Ваш
+            Учетная запись, если
+            она у вас есть, и посещение раздела настроек учетной записи, который позволяет вам управлять вашей личной
+            информацией. Вы можете
+            также связаться с нами, чтобы запросить доступ, исправить или удалить любую личную информацию, которую вы
+            предоставили
+            нам.</p>
+          <p class="tx-main mb-32-16">Однако обратите внимание, что нам может потребоваться сохранить определенную
+            информацию, если у нас есть
+            юридическое обязательство или законное основание для этого.</p>
+          <h3 class="tx-24 mb-24 MinionPro">Раскрытие ваших персональных данных</h3>
+          <h4 class="tx-24 mb-24 MinionPro">Бизнес-транзакции</h4>
+          <p class="tx-main mb-32-16">Если компания участвует в слиянии, поглощении или продаже активов, ваши
+            персональные
+            данные могут быть
+            переданы.
+            Мы предоставим уведомление до того, как Ваши персональные данные будут переданы и станут предметом другой
+            Политики конфиденциальности.</p>
+          <h4 class="tx-24 mb-24 MinionPro">Правоохранительные органы</h4>
+          <p class="tx-main mb-32-16">При определенных обстоятельствах Компания может быть обязана раскрыть Ваши
+            персональные данные, если это
+            требуется по закону или в ответ на обоснованные запросы государственных органов (например, суда или
+            государственного учреждения).</p>
+          <h4 class="tx-24 mb-24 MinionPro">Другие юридические требования</h4>
+          <p class="tx-main mb-32-16">Компания может раскрыть Ваши персональные данные, добросовестно полагая, что такое
+            действие необходимо для:
+          </p>
+          <ul class="mb-44">
+            <li class="tx-main mb-12">Соблюдения юридических обязательств</li>
+            <li class="tx-main mb-12">Защиты и отстаивания прав или собственности Компании</li>
+            <li class="tx-main mb-12">Предотвращения или расследования возможных правонарушений, связанных с Сервисом
+            </li>
+            <li class="tx-main mb-12">Защиты личной безопасности Пользователей Сервиса или общественности</li>
+            <li class="tx-main mb-12">Защиты от юридической ответственности</li>
+          </ul>
+          <h3 class="tx-24 mb-24 MinionPro">Безопасность Ваших персональных данных</h3>
+          <p class="tx-main mb-64">Безопасность Ваши персональные данные важны для нас, но помните, что ни один метод
+            передачи через
+            Интернет или метод электронного хранения не является на 100% безопасным. Хотя мы стремимся использовать
+            коммерчески приемлемые
+            средства для защиты ваших персональных данных, мы не можем гарантировать их абсолютную безопасность.</p>
+          <h2 class="tx-32-20 mb-40-16 MinionPro">Конфиденциальность детей</h2>
+          <p class="tx-main mb-32-16">Наш Сервис не предназначен для лиц младше 13 лет. Мы сознательно не собираем
+            личную
+            идентификационную информацию от лиц младше 13 лет. Если вы являетесь родителем или опекуном и вам известно,
+            что ваш ребенок предоставил нам персональные данные, свяжитесь с нами. Если Нам станет известно, что Мы
+            собрали Персональные данные от кого-либо младше 13 лет без проверки согласия родителей, Мы
+            примем меры по удалению этой информации с Наших серверов.</p>
+          <p class="tx-main mb-64">Если Нам необходимо полагаться на согласие в качестве законного основания для
+            обработки Вашей информации, а
+            Ваша страна требует
+            согласия от родителя, Мы можем потребовать согласия Вашего родителя, прежде чем Мы соберем и используем эту
+            информацию.</p>
+          <h2 class="tx-32-20 mb-40-16 MinionPro">Ссылки на другие веб-сайты</h2>
+          <p class="tx-main mb-32-16">Наш Сервис может содержать ссылки на другие веб-сайты, которые не управляются
+            Нами.
+            Если Вы нажмете на
+            ссылку третьей стороны,
+            Вы будете перенаправлены на сайт этой третьей стороны. Мы настоятельно рекомендуем Вам ознакомиться с
+            Политикой конфиденциальности
+            каждого сайта, который Вы посещаете.</p>
+          <p class="tx-main mb-64">Мы не контролируем и не несем ответственности за содержание, политику
+            конфиденциальности или практику любых
+            сторонних сайтов или служб.</p>
+          <h2 class="tx-32-20 mb-40-16 MinionPro">Изменения в настоящей Политике конфиденциальности</h2>
+          <p class="tx-main mb-32-16">Мы можем время от времени обновлять нашу Политику конфиденциальности. Мы уведомим
+            Вас о любых изменениях,
+            разместив новую
+            Политику конфиденциальности на этой странице.</p>
+          <p class="tx-main mb-32-16">Мы сообщим Вам об этом по электронной почте и/или с помощью заметного уведомления
+            в
+            Нашем Сервисе до того,
+            как изменение вступит в силу, и обновим дату «Последнего обновления» в верхней части этой Политики
+            конфиденциальности.</p>
+          <p class="tx-main mb-64">Вам рекомендуется периодически просматривать эту Политику конфиденциальности на
+            предмет любых изменений.
+            Изменения в этой Политике конфиденциальности
+            вступают в силу с момента их публикации на этой странице.</p>
+
+        </div>
+      </section>
+      <!-- Конец policy -->
+    </main>
+    <!-- Начало footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__top mb-32">
+          <div class="footer__left">
+            <nav class="nav nav_footer" aria-label="Навигация сайта">
+              <ul class="nav__list nav__list_footer" aria-label="Список навигации сайта">
+                <li class="nav__item">
+                  <div class="nav__title uppercase tx-main mb-16 OpenSans fw-600">
+                    О компании
+                  </div>
+                  <ul class="nav__sublist" aria-label="Список навигации">
+                    <li class="mb-16">
+                      <a class="nav__link nav__link_hover OpenSans nav__link_footer tx-14" href="about.html"
+                        aria-label="О нас">
+                        О нас
+                      </a>
+                    </li>
+                    <li class="mb-16">
+                      <a class="nav__link nav__link_hover OpenSans nav__link_footer tx-14" href="catalog.html"
+                        aria-label="Каталог">
+                        Каталог
+                      </a>
+                    </li>
+                    <li class="mb-16">
+                      <a class="nav__link nav__link_hover OpenSans nav__link_footer tx-14" href="services.html"
+                        aria-label="Услуги">
+                        Услуги
+                      </a>
+                    </li>
+                    <li class="mb-16">
+                      <a class="nav__link nav__link_hover OpenSans nav__link_footer tx-14" href="vacancies.html"
+                        aria-label="Вакансии">
+                        Вакансии
+                      </a>
+                    </li>
+                    <li class="mb-16">
+                      <a class="nav__link nav__link_hover OpenSans nav__link_footer tx-14" href="specialists.html"
+                        aria-label="Специалисты">
+                        Специалисты
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- <li class="nav__item"> -->
+                <!-- <div class="nav__title uppercase tx-main mb-16 OpenSans fw-600"> -->
+                <!-- Гарантия и возврат -->
+                <!-- </div> -->
+                <!-- <ul class="nav__sublist" aria-label="Список навигации">
+                    <li>
+                      <a class="nav__link nav__link_hover nav__link_footer tx-14" href="#!" aria-label="">
+  
+                      </a>
+                    </li>
+                  </ul> -->
+                <!-- </li> -->
+                <li class="nav__item">
+                  <div class="nav__title uppercase tx-main mb-16 OpenSans fw-600">
+                    Клиентам
+                  </div>
+                  <ul class="nav__sublist" aria-label="Список навигации">
+                    <li class="mb-16">
+                      <button class="login login_light OpenSans tx-14" aria-label="Авторизация">
+                        Авторизация
+                      </button>
+                    </li>
+                    <!-- <li class="mb-16">
+                      <a class="nav__link nav__link_hover OpenSans nav__link_footer tx-14" href="#!"
+                        aria-label="Личный кабинет">
+                        Личный кабинет
+                      </a>
+                    </li> -->
+                    <li class="mb-16">
+                      <a class="nav__link nav__link_hover OpenSans nav__link_footer tx-14"
+                        href="payment-and-delivery.html" aria-label="Оплата и доставка">
+                        Оплата и доставка
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer__right">
+            <ul class="footer__soc mb-32">
+              <li>
+                <a class="footer__link" href="#" target="_blank" aria-label="Телеграм">
+                  <svg width="32" height="32" fill="currentColor">
+                    <use xlink:href="img/sprites/sprites.svg#telegram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a class="footer__link" href="#" target="_blank" aria-label="Инстаграм">
+                  <svg width="32" height="32" fill="currentColor">
+                    <use xlink:href="img/sprites/sprites.svg#instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a class="footer__link" href="#" target="_blank" aria-label="Вконтакте">
+                  <svg width="32" height="32" fill="currentColor">
+                    <use xlink:href="img/sprites/sprites.svg#vk"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+            <address class="footer__address">
+              <div class="footer__item mb-32">
+                <p class="OpenSans mb-16 tx-14">
+                  По вопросам о покупке и доставке:
+                </p>
+                <a class="OpenSans mb-16 tx-14" href="+89999999999" aria-label="8 999 999 99 99">
+                  8 999 999 99 99
+                </a>
+              </div>
+              <div class="footer__item mb-32">
+                <p class="OpenSans mb-16 tx-14">
+                  По вопросам о сотрудничестве:
+                </p>
+                <a class="OpenSans mb-16 tx-14" href="+89999999999" aria-label="8 999 999 99 99">
+                  8 999 999 99 99
+                </a>
+              </div>
+            </address>
+          </div>
+        </div>
+        <nav>
+          <ul class="footer__list">
+            <li>
+              <a class="tx-14 OpenSans" href="cookie.html" aria-label="Политика cookie">
+                Политика cookie
+              </a>
+            </li>
+            <li>
+              <a class="tx-14 OpenSans" href="policy.html" aria-label="Политика конфиденциальности">
+                Политика конфиденциальности
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+    <!-- Конец footer -->
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,1811 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:type" content="website">
+  <meta name="language" content="Russian">
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="ключ">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Заголовок страницы">
+  <meta property="og:site_name" content="Описание страницы">
+  <meta property="og:url" content="https://site.ru/">
+  <meta property="og:image" content="https://site.ru/main.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Главная">
+  <meta property="og:image:type" content="image/png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Заголовок страницы">
+  <meta name="twitter:description" content="Описание страницы">
+  <meta name="twitter:site" content="https://site.ru/">
+  <meta name="twitter:image" content="https://site.ru/main.png">
+  <meta name="description" content="Описание страницы">
+  <title>Заголовок страницы</title>
+  <link rel="canonical" href="https://site.ru/">
+  <link rel="icon" href="./favicon.png" type="image/png">
+  <link rel="preload" href="./fonts/MinionPro-Italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/MinionPro-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/OpenSans-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/Cormorant-Italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/Cormorant-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/Cormorant-Light.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./resources/swiper/swiper.css">
+  <link rel="stylesheet" href="./css/main-min.css">
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=91917327-f7a2-42ba-b391-62f86c9c6dee&lang=ru_RU"></script>
+  <script defer src="./resources/gallery-fslightbox/fslightbox.js"></script>
+  <script src="./resources/animates/gsap/gsap.min.js"></script>
+  <script src="./resources/validate/new/just-validate.min.js"></script>
+  <script src="./resources/validate/inputmask.js"></script>
+  <script src="./resources/swiper/swiper.js"></script>
+  <script defer src="./js/main.js"></script>
+</head>
+
+<body>
+  <div class="page">
+    <!-- Начало header -->
+    <header class="header box-shadow">
+
+      <div class="popup-cookie">
+        <div class="popup-cookie__text tx-main MinionPro mb-16">
+          Используя данный сайт, вы даете согласие на использование файлов cookie, помогающих нам сделать его удобнее
+          для вас
+        </div>
+        <div class="popup-cookie__buttons">
+          <a class="popup-cookie__link but MinionPro" href="cookie.html" aria-label="Подробнее">
+            Подробнее
+          </a>
+          <button class="popup-cookie__button MinionPro but but_background" aria-label="Хорошо">
+            Хорошо
+          </button>
+        </div>
+      </div>
+
+      <div class="auth wrapper-form">
+        <div class="auth__close"></div>
+        <div class="auth__content">
+          <button class="auth__exit mb-32" aria-label="Закрыть попап авторизации">
+            <svg width="24" height="24" fill="currentColor">
+              <use xlink:href="./img/sprites/sprites.svg#exit"></use>
+            </svg>
+          </button>
+          <div class="auth__item auth__item_phone active">
+            <div class="auth__title mb-64-32 text-center tx-36-24 uppercase">
+              Авторизация
+            </div>
+            <form class="wrapper-form__form" method="POST" action="#!" id="auth_form" name="auth_form"
+              autocomplete="off" aria-label="Авторизация">
+              <div class="wrapper-form__inputs mb-16">
+                <label class="wrapper-form__label" for="auth_tel">
+                  <span class="input-circle-decor"></span>
+                  <input class="wrapper-form__input input" type="tel" name="Номер телефона:" id="auth_tel"
+                    placeholder="Номер телефона" required aria-label="Номер телефона">
+                </label>
+              </div>
+              <p class="OpenSans tx-main mb-32-16" style="color: var(--dark-main); opacity: .5;">
+                Введите ваш номер телефона, <br>
+                мы пришлем вам единоразовый код для входа
+              </p>
+              <button class="wrapper-form__button but but_background MinionPro mb-32-16" type="submit"
+                aria-label="Продолжить" style="min-width: 218px;">
+                продолжить
+              </button>
+              <p class="OpenSans tx-main mb-32-16" style="color: var(--dark-main); opacity: .5;">
+                Нажимая на кнопку, я принимаю <br>
+                Соглашение о конфиденциальности
+              </p>
+            </form>
+
+          </div>
+          <div class="auth__item auth__item_code">
+            <div class="auth__title mb-64-32 text-center tx-36-24 uppercase">
+              Код подтверждения
+            </div>
+            <form class="wrapper-form__form" method="POST" action="#!" id="code_form" name="code_form"
+              autocomplete="off" aria-label="Код подтверждения">
+              <div class="wrapper-form__inputs mb-16">
+                <label class="wrapper-form__label" for="code_code">
+                  <span class="input-circle-decor"></span>
+                  <input class="wrapper-form__input input" type="text" name="Код из письма:" id="code_code"
+                    placeholder="Код из письма" required aria-label="Код из письма">
+                </label>
+              </div>
+              <p class="OpenSans tx-main mb-32-16" style="color: var(--dark-main); opacity: .5;">
+                На номер +7 *** *** 30-05 отправлено смс-сообщение <br>
+                с кодом подтверждения. Введите код <br>
+                и нажмите “Подтвердить”
+              </p>
+              <div class="wrapper-form__flex mb-32-16">
+                <button class="wrapper-form__button but but_background MinionPro" type="submit" aria-label="Подтвердить"
+                  style="min-width: 218px;">
+                  подтвердить
+                </button>
+                <button class="wrapper-form__button wrapper-form__button_cancel but MinionPro" type="button"
+                  aria-label="Отмена" style="min-width: 218px;">
+                  отмена
+                </button>
+              </div>
+              <p class="timer OpenSans tx-main mb-32-16">
+                Отправить повторно можно через <span>60</span> сек.
+              </p>
+            </form>
+            <button class="auth__retry disabled but but_background MinionPro" type="button"
+              aria-label="Отправить повторно">
+              отправить повторно
+            </button>
+
+            <script>
+              const timer = document.querySelector(".timer span");
+
+              let timerValue = 60;
+
+              function startTimer(close = null) {
+
+                let funTimer = setInterval(() => {
+                  if (document.querySelector(".auth__item_code").classList.contains("active")) {
+                    if (timerValue !== 0) {
+                      timerValue--
+                      timer.innerHTML = timerValue;
+                    } else {
+                      document.querySelector(".auth__retry") ? document.querySelector(".auth__retry").classList
+                        .remove("disabled") : "";
+                      clearTimeout(funTimer);
+                      // тут происходит если таймер достиг 0 и появилась кнопка при клике на которую перезапускается таймер
+                    }
+                  } else {
+                    clearTimeout(funTimer);
+                    timerValue = 60;
+                    timer.innerHTML = 60;
+                  }
+                }, 1000)
+
+                if (close !== null) {
+                  clearTimeout(funTimer);
+                  timerValue = 60;
+                  timer.innerHTML = 60;
+                }
+
+              }
+
+
+              document.addEventListener("click", function (e) {
+
+                const elementInteractive = e.target;
+
+                if (elementInteractive.closest(".auth__retry")) {
+                  timerValue = 60;
+                  timer.innerHTML = 60;
+                  startTimer();
+                  document.querySelector(".auth__retry") ? document.querySelector(".auth__retry").classList
+                    .add("disabled") : "";
+                  // тут происходит код при повторной отправки проверочного кода
+                }
+
+                if (elementInteractive.closest(".wrapper-form__button_cancel")) {
+                  document.querySelector(".auth__item_phone") ? document.querySelector(".auth__item_phone")
+                    .classList.add("active") : "";
+                  document.querySelector(".auth__item_code") ? document.querySelector(".auth__item_code").classList
+                    .remove("active") : "";
+                  startTimer(1)
+                  timerValue = 60;
+                  timer.innerHTML = 60;
+                }
+              })
+
+              const authForm = document.querySelector("#auth_form");
+              const authFormTel = authForm.querySelector("input[type='tel']");
+              const authFormsMask = new Inputmask("+7(999)999-99-99");
+              authFormsMask.mask(authFormTel);
+
+              const validatorAuth = new JustValidate(authForm, {});
+
+              validatorAuth
+                .addField('#auth_tel', [{
+                    rule: 'required',
+                    value: true,
+                    errorMessage: 'Введите ваш телефон',
+                  },
+                  {
+                    rule: 'function',
+                    validator: function () {
+                      const phone = authFormTel.inputmask.unmaskedvalue();
+                      return phone.length === 10;
+                    },
+                    errorMessage: 'Введите корректный телефон',
+                  },
+                ])
+                .onSuccess((event) => { // Если форма проходит валидацию то происходит код ниже
+
+                  document.querySelector(".auth__item_phone") ? document.querySelector(".auth__item_phone").classList
+                    .remove("active") : "";
+
+                  document.querySelector(".auth__item_code") ? document.querySelector(".auth__item_code").classList
+                    .add("active") : "";
+
+                  startTimer();
+
+                  // document.querySelector(".status-send") ? document.querySelector(".status-send").classList.add(
+                  //     "active") :
+                  //   '';
+
+                  // document.querySelector(".status-send-preload") ? document.querySelector(".status-send-preload")
+                  //   .classList
+                  //   .add("active") : '';
+
+                  // let formData = new FormData(event.target);
+
+                  // let xhr = new XMLHttpRequest();
+
+                  // xhr.onreadystatechange = function () {
+                  //   if (xhr.readyState === 4) {
+                  //     if (xhr.status === 200) {
+                  //       document.querySelector(".status-send-preload") ? document.querySelector(
+                  //           ".status-send-preload")
+                  //         .classList.remove("active") : '';
+                  //       document.querySelector(".status-send-okay") ? document.querySelector(".status-send-okay")
+                  //         .classList
+                  //         .add("active") : '';
+                  //     } else {
+                  //       document.querySelector(".status-send-preload") ? document.querySelector(
+                  //           ".status-send-preload")
+                  //         .classList.remove("active") : '';
+                  //       document.querySelector(".status-send-error") ? document.querySelector(".status-send-error")
+                  //         .classList.add("active") : '';
+                  //     }
+                  //   }
+                  // }
+
+                  // xhr.open('POST', './mail.php', true);
+                  // xhr.send(formData);
+
+                  // event.target.reset();
+                })
+
+              let isCode = "ssSSSSS";
+
+              const codeForm = document.querySelector("#code_form");
+
+              const validatorCode = new JustValidate(codeForm, {});
+
+              validatorCode
+                .addField('#code_code', [{
+                  validator: (value) => { // Своя проверка, будет работать как rule
+                    const codeInner = document.getElementById("code_code");
+                    return Boolean(codeInner.value === isCode)
+                  },
+                  errorMessage: 'Введите код из смс',
+                }, ])
+                .onSuccess((event) => { // Если форма проходит валидацию то происходит код ниже
+
+                  document.querySelector(".auth__item_phone") ? document.querySelector(".auth__item_phone").classList
+                    .add("active") : "";
+
+                  document.querySelector(".auth__item_code") ? document.querySelector(".auth__item_code").classList
+                    .remove("active") : "";
+
+                  document.querySelector(".auth") ? document.querySelector(".auth").classList
+                    .remove("active") : "";
+
+                  startTimer()
+
+                  // document.querySelector(".status-send") ? document.querySelector(".status-send").classList.add(
+                  //     "active") :
+                  //   '';
+
+                  // document.querySelector(".status-send-preload") ? document.querySelector(".status-send-preload")
+                  //   .classList
+                  //   .add("active") : '';
+
+                  // let formData = new FormData(event.target);
+
+                  // let xhr = new XMLHttpRequest();
+
+                  // xhr.onreadystatechange = function () {
+                  //   if (xhr.readyState === 4) {
+                  //     if (xhr.status === 200) {
+                  //       document.querySelector(".status-send-preload") ? document.querySelector(
+                  //           ".status-send-preload")
+                  //         .classList.remove("active") : '';
+                  //       document.querySelector(".status-send-okay") ? document.querySelector(".status-send-okay")
+                  //         .classList
+                  //         .add("active") : '';
+                  //     } else {
+                  //       document.querySelector(".status-send-preload") ? document.querySelector(
+                  //           ".status-send-preload")
+                  //         .classList.remove("active") : '';
+                  //       document.querySelector(".status-send-error") ? document.querySelector(".status-send-error")
+                  //         .classList.add("active") : '';
+                  //     }
+                  //   }
+                  // }
+
+                  // xhr.open('POST', './mail.php', true);
+                  // xhr.send(formData);
+
+                  // event.target.reset();
+                })
+            </script>
+          </div>
+        </div>
+      </div>
+
+      <div class="popup">
+        <div class="popup__close"></div>
+        <div class="popup__content">
+          <button class="popup__exit mb-24" aria-label="Закрыть попап">
+            <svg width="24" height="24" fill="currentColor" stroke="currentColor">
+              <use xlink:href="./img/sprites/sprites.svg#exit"></use>
+            </svg>
+          </button>
+          <div class="popup__title mb-32 uppercase tx-32-20">
+            Запишитесь на консультацию <br>
+            или понравившуюся процедуру
+          </div>
+          <p class="popup__text mb-32 tx-main MinionPro">
+            Введите контактную информацию и мы свяжемся с Вами!
+          </p>
+          <div class="wrapper-form" style="background-color: transparent;">
+            <div class="wrapper-form__content content-form">
+              <form class="wrapper-form__form" method="POST" action="#!" id="reading_form" name="reading_form"
+                autocomplete="off" aria-label="Запишитесь на консультацию или процедуру">
+                <input type="hidden" name="Откуда пришло письмо"
+                  value="Форма: Запишитесь на консультацию или процедуру">
+                <div class="wrapper-form__top mb-16">
+                  <div class="wrapper-form__inputs">
+                    <label class="wrapper-form__label" for="reading_name">
+                      <span class="input-circle-decor"></span>
+                      <input class="wrapper-form__input input" type="text" name="Имя:" id="reading_name"
+                        placeholder="Имя" required aria-label="Имя">
+                    </label>
+                    <label class="wrapper-form__label" for="reading_tel">
+                      <span class="input-circle-decor"></span>
+                      <input class="wrapper-form__input input" type="tel" name="Номер_телефона:" id="reading_tel"
+                        placeholder="Номер телефона" required aria-label="Номер телефона">
+                    </label>
+                  </div>
+                  <button class="wrapper-form__button but MinionPro" type="submit" aria-label="Записаться">
+                    записаться
+                  </button>
+                </div>
+                <div class="wrapper-form__checkboxs">
+                  <div class="wrapper-checkbox tx-16 OpenSans mb-16">
+                    <input class="wrapper-checkbox__checkbox inf-pol" type="checkbox" name="Информационная политика">
+                    <span class="wrapper-checkbox__decor"></span>
+                    Подтверждаю, что ознакомлен(а) с Информационной политикой
+                  </div>
+                  <div class="wrapper-checkbox tx-16 OpenSans">
+                    <input class="wrapper-checkbox__checkbox ysl-pers-dan" type="checkbox"
+                      name="Условия обработки персональных данных">
+                    <span class="wrapper-checkbox__decor"></span>
+                    Согласен(на) с Условиями обработки персональных данных
+                  </div>
+                </div>
+              </form>
+
+              <script>
+                const readingForm = document.querySelector("#reading_form");
+                const readingFormTel = readingForm.querySelector("input[type='tel']");
+                const readingFormsMask = new Inputmask("+7(999)999-99-99");
+                readingFormsMask.mask(readingFormTel);
+
+                const validatorReading = new JustValidate(readingForm, {});
+
+                validatorReading
+                  .addField('#reading_name', [{ // можно использовать классы вместо ид
+                    rule: 'required',
+                    errorMessage: 'Введите ваше имя',
+                  }])
+                  .addField(readingForm.querySelector(".inf-pol"), [{
+                    validator: (value) => { // Своя проверка, будет работать как rule
+                      const ckeckPoint = readingForm.querySelector(".inf-pol");
+                      return Boolean(ckeckPoint.checked == true)
+                    },
+                    errorMessage: 'Обязательно',
+                  }, ])
+                  .addField(readingForm.querySelector(".ysl-pers-dan"), [{
+                    validator: (value) => { // Своя проверка, будет работать как rule
+                      const ckeckPoint = readingForm.querySelector(".ysl-pers-dan");
+                      return Boolean(ckeckPoint.checked == true)
+                    },
+                    errorMessage: 'Обязательно',
+                  }, ])
+                  .addField('#reading_tel', [{
+                      rule: 'required',
+                      value: true,
+                      errorMessage: 'Введите ваш телефон',
+                    },
+                    {
+                      rule: 'function',
+                      validator: function () {
+                        const phone = readingFormTel.inputmask.unmaskedvalue();
+                        return phone.length === 10;
+                      },
+                      errorMessage: 'Введите корректный телефон',
+                    },
+                  ])
+                  .onSuccess((event) => { // Если форма проходит валидацию то происходит код ниже
+                    document.querySelector(".status-send") ? document.querySelector(".status-send").classList.add(
+                        "active") :
+                      '';
+
+                    document.querySelector(".status-send-preload") ? document.querySelector(".status-send-preload")
+                      .classList
+                      .add("active") : '';
+
+                    let formData = new FormData(event.target);
+
+                    let xhr = new XMLHttpRequest();
+
+                    xhr.onreadystatechange = function () {
+                      if (xhr.readyState === 4) {
+                        if (xhr.status === 200) {
+                          document.querySelector(".status-send-preload") ? document.querySelector(
+                              ".status-send-preload")
+                            .classList.remove("active") : '';
+                          document.querySelector(".status-send-okay") ? document.querySelector(".status-send-okay")
+                            .classList
+                            .add("active") : '';
+                        } else {
+                          document.querySelector(".status-send-preload") ? document.querySelector(
+                              ".status-send-preload")
+                            .classList.remove("active") : '';
+                          document.querySelector(".status-send-error") ? document.querySelector(
+                              ".status-send-error")
+                            .classList.add("active") : '';
+                        }
+                      }
+                    }
+
+                    xhr.open('POST', './mail.php', true);
+                    xhr.send(formData);
+
+                    event.target.reset();
+                  })
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="status-send">
+        <div class="status-send__close"></div>
+        <div class="status-send__content">
+          <button class="status-send__exit mb-32" aria-label="Закрыть статусы отправок">
+            <svg width="24" height="24" fill="currentColor">
+              <use xlink:href="img/sprites/sprites.svg#exit"></use>
+            </svg>
+          </button>
+          <div class="status-send__item status-send-preload">
+            <div class="status-send__icon status-send__icon_animate mb-40-16">
+              <img src="./img/svg/preload.svg" width="50" height="50" title="Прелоад" alt="Прелоад">
+            </div>
+          </div>
+          <div class="status-send__item status-send-error">
+            <div class="status-send__icon mb-40-16">
+              <img src="./img/svg/error.svg" width="50" height="50" title="Ошибка" alt="Ошибка">
+            </div>
+            <p class="status-send__text OpenSans tx-16 text-center">
+              Произошла ошибка! Попробуйте еще раз.
+            </p>
+          </div>
+          <div class="status-send__item status-send-okay">
+            <div class="status-send__icon mb-40-16">
+              <img src="./img/svg/okay.svg" width="50" height="50" title="Успешно" alt="Успешно">
+            </div>
+            <p class="status-send__text OpenSans tx-16 text-center">
+              Спасибо! Успешно отправлено.
+            </p>
+          </div>
+          <div class="status-send__item status-send-save">
+            <div class="status-send__icon mb-40-16">
+              <img src="./img/svg/okay.svg" width="50" height="50" title="Прелоад" alt="Прелоад">
+            </div>
+            <p class="status-send__text OpenSans tx-16 text-center">
+              Изменения сохранены
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="remove-popup">
+        <div class="remove-popup__close"></div>
+        <div class="remove-popup__content">
+          <div class="remove-popup__text MinionPro tx-main mb-32-16">
+            Подтвердите удаление
+          </div>
+          <button class="remove-popup__button mb-16 remove-popup__button_remove but" aria-label="Подтверждаю">
+            Подтверждаю
+          </button>
+          <button class="remove-popup__button remove-popup__button_cancel but but_background"
+            aria-label="Отменить действие">
+            Отменить действие
+          </button>
+        </div>
+      </div>
+
+      <div class="header__container container">
+        <div class="header__left">
+          <a class="logo rd-upload" href="/" aria-label="Главная страница">
+            <img src="." data-rd-image="./img/svg/logotip-site-small.svg" width="60" height="33" title="Галерея красоты"
+              alt="Галерея красоты">
+          </a>
+          <button class="login tx-14 fw-600 OpenSans">
+            Авторизация
+          </button>
+          <!-- <div class="nav nav_cabinet wrapper-dropdown" style="position: relative;">
+            <button class="nav__link tx-14 fw-600 OpenSans" aria-label="О нас">
+              Личный кабинет
+            </button>
+            <div class="dropdown dropdown-nav">
+              <button class="dropdown__exit-menu" aria-label="Закрыть скрытое меню">
+                <svg width="24" height="24" fill="currentColor">
+                  <use xlink:href="./img/sprites/sprites.svg#exit"></use>
+                </svg>
+              </button>
+              <div class="dropdown__top">
+                <a class="dropdown__link tx-14-18 OpenSans" href="cabinet-basket.html" aria-label="Корзина">
+                  Корзина
+                </a>
+                <a class="dropdown__link tx-14-18 OpenSans" href="cabinet-favorite.html" aria-label="Избранное">
+                  Избранное
+                </a>
+              </div>
+              <ul class="dropdown__list" aria-label="О нас">
+                <li class="mb-8-16">
+                  <a class="dropdown__link tx-14-18 OpenSans" href="cabinet.html" aria-label="Профиль">
+                    Профиль
+                  </a>
+                </li>
+                <li class="mb-8-16">
+                  <a class="dropdown__link tx-14-18 OpenSans" href="cabinet-personal-data.html"
+                    aria-label="Личные данные">
+                    Личные данные
+                  </a>
+                </li>
+                <li class="mb-8-16">
+                  <a class="dropdown__link tx-14-18 OpenSans" href="cabinet-order.html" aria-label="Заказы">
+                    Заказы
+                  </a>
+                </li>
+                <li class="mb-8-16">
+                  <a class="dropdown__link tx-14-18 OpenSans" href="cabinet-deposit-card.html"
+                    aria-label="Депозитная карта">
+                    Депозитная карта
+                  </a>
+                </li>
+                <li class="mb-16-32">
+                  <a class="dropdown__link tx-14-18 OpenSans" href="cabinet-address.html" aria-label="Адреса">
+                    Адреса
+                  </a>
+                </li>
+                <li class="mb-8-16">
+                  <a class="dropdown__link tx-14-18 OpenSans" href="#!" aria-label="Выйти">
+                    Выйти
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div> -->
+        </div>
+        <div class="header__right">
+          <nav class="nav nav_none" aria-label="Навигация">
+            <ul class="nav__list" aria-label="Список навигации">
+              <li class="nav__item wrapper-dropdown">
+                <button class="nav__link tx-14-18 fw-600 OpenSans" aria-label="О нас">
+                  О нас
+                </button>
+                <div class="dropdown dropdown-nav">
+                  <ul class="dropdown__list" aria-label="О нас">
+                    <li class="mb-8-16">
+                      <a class="dropdown__link tx-14-18 OpenSans" href="about.html" aria-label="О нас">
+                        О нас
+                      </a>
+                    </li>
+                    <li class="mb-8-16">
+                      <a class="dropdown__link tx-14-18 OpenSans" href="specialists.html" aria-label="Специалисты">
+                        Специалисты
+                      </a>
+                    </li>
+                    <li class="mb-8-16">
+                      <a class="dropdown__link tx-14-18 OpenSans" href="vip-club.html" aria-label="Vip-клуб">
+                        Vip-клуб
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav__item wrapper-dropdown">
+                <button class="nav__link tx-14-18 fw-600 OpenSans" aria-label="Услуги">
+                  Услуги
+                </button>
+                <div class="dropdown dropdown-nav">
+                  <ul class="dropdown__list" aria-label="Услуги">
+                    <li class="mb-8-16">
+                      <a class="dropdown__link tx-14-18 OpenSans" href="services.html" aria-label="Услуги">
+                        Услуги
+                      </a>
+                    </li>
+                    <li class="mb-8-16">
+                      <a class="dropdown__link tx-14-18 OpenSans" href="services-category.html"
+                        aria-label="Безинъкционные процедуры">
+                        Безинъкционные процедуры
+                      </a>
+                    </li>
+                    <li class="mb-8-16">
+                      <a class="dropdown__link tx-14-18 OpenSans" href="services-category.html"
+                        aria-label="Инъекционные процедуры">
+                        Инъекционные процедуры
+                      </a>
+                    </li>
+                    <li class="mb-8-16">
+                      <a class="dropdown__link tx-14-18 OpenSans" href="services-category.html"
+                        aria-label="Аппаратные процедуры">
+                        Аппаратные процедуры
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav__item wrapper-dropdown">
+                <button class="nav__link tx-14-18 fw-600 OpenSans" aria-label="Каталог">
+                  Каталог
+                </button>
+                <div class="dropdown dropdown-nav">
+                  <ul class="dropdown__list" aria-label="Каталог">
+                    <li class="mb-8-16">
+                      <a class="dropdown__link tx-14-18 OpenSans" href="catalog.html" aria-label="Каталог">
+                        Каталог
+                      </a>
+                    </li>
+                    <li class="mb-8-16">
+                      <a class="dropdown__link tx-14-18 OpenSans" href="catalog-category.html"
+                        aria-label="Кожа вокруз глаз">
+                        Кожа вокруз глаз
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link tx-14-18 fw-600 OpenSans" href="contacts.html" aria-label="Контакты">
+                  Контакты
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <button class="header__button but OpenSans go-popup" aria-label="Записаться на консультацию">
+            Записаться на консультацию
+          </button>
+          <div class="wrapper-burger">
+            <button class="burger" aria-label="Скрытое меню">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <div class="dropdown dropdown-burger">
+              <button class="dropdown__exit-menu" aria-label="Закрыть скрытое меню">
+                <svg width="24" height="24" fill="currentColor">
+                  <use xlink:href="./img/sprites/sprites.svg#exit"></use>
+                </svg>
+              </button>
+              <ul class="dropdown__list" aria-label="Выпадающий список">
+                <li class="mb-8-16">
+                  <a class="dropdown__link tx-14-18 OpenSans" href="about.html" aria-label="О нас">
+                    О нас
+                  </a>
+                </li>
+                <li class="mb-8-16">
+                  <a class="dropdown__link tx-14-18 OpenSans" href="services.html" aria-label="Услуги">
+                    Услуги
+                  </a>
+                </li>
+                <li class="mb-8-16">
+                  <a class="dropdown__link tx-14-18 OpenSans" href="catalog.html" aria-label="Каталог">
+                    Каталог
+                  </a>
+                </li>
+                <li class="mb-8-16">
+                  <a class="dropdown__link tx-14-18 OpenSans" href="contacts.html" aria-label="Контакты">
+                    Контакты
+                  </a>
+                </li>
+                <li class="mb-8-16">
+                  <a class="dropdown__link tx-14-18 OpenSans" href="about.html#benefits" aria-label="Преимущества">
+                    Преимущества
+                  </a>
+                </li>
+                <li class="mb-8-16">
+                  <a class="dropdown__link tx-14-18 OpenSans" href="vacancies.html" aria-label="Вакансии">
+                    Вакансии
+                  </a>
+                </li>
+                <li class="mb-8-16">
+                  <a class="dropdown__link tx-14-18 OpenSans" href="specialists.html" aria-label="Специалисты">
+                    Специалисты
+                  </a>
+                </li>
+                <li class="mb-8-16">
+                  <a class="dropdown__link tx-14-18 OpenSans" href="idealnaya.html" aria-label="ИдеальнаЯ">
+                    ИдеальнаЯ
+                  </a>
+                </li>
+                <li class="mb-8-16">
+                  <a class="dropdown__link tx-14-18 OpenSans" href="medicines-and-equipment.html"
+                    aria-label="Препараты и оборудование">
+                    Препараты и оборудование
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Конец header -->
+    <main class="main">
+      <!-- Начало breadcrumb -->
+      <section class="breadcrumb rd-upload pb-64">
+        <div class="container">
+          <h2 class="visually-hidden">
+            Навигация
+          </h2>
+          <ul class="breadcrumb__list" aria-label="Список навигации">
+            <li class="breadcrumb__item">
+              <a class="breadcrumb__link OpenSans circle circle_after tx-14" href="/" aria-label="Главная">
+                Главная
+              </a>
+            </li>
+            <li class="breadcrumb__item">
+              <a class="breadcrumb__link OpenSans active circle_after circle tx-14" href="cabinet-favorite.html"
+                aria-label="Избранное">
+                Избранное
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- Конец breadcrumb -->
+
+      <!-- Начало cabinet -->
+      <section class="cabinet rd-upload mb-64 pt-64-0">
+        <div class="cabinet__container container">
+          <div class="cabinet__menu">
+            <div class="cabinet__menu-top scroll">
+              <div class="idealnaya rd-upload" style="background-color: transparent;">
+                <div class="idealnaya__item accordeon mb-32">
+                  <div class="idealnaya__top idealnaya__top_center mb-32" style="gap: 20px;">
+                    <div class="idealnaya__icon idealnaya__icon_width" style="margin: 0;">
+                      <img src="." data-rd-image="./img/svg/decorative-star-dark.svg" width="61" height="58"
+                        title="Декоративная иконка" alt="Декоративная иконка">
+                    </div>
+                    <div class="idealnaya__content" style="padding-top: 0;">
+                      <a class="idealnaya__button tx-36-24 uppercase mb-16" href="cabinet.html" style="line-height: 1;"
+                        aria-label="Профиль">
+                        профиль
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="idealnaya rd-upload" style="background-color: transparent;">
+                <div class="idealnaya__item accordeon mb-32">
+                  <div class="idealnaya__top idealnaya__top_center mb-32" style="gap: 20px;">
+                    <div class="idealnaya__icon idealnaya__icon_width" style="margin: 0;">
+                      <img src="." data-rd-image="./img/svg/decorative-star-dark.svg" width="61" height="58"
+                        title="Декоративная иконка" alt="Декоративная иконка">
+                    </div>
+                    <div class="idealnaya__content" style="padding-top: 0;">
+                      <a class="idealnaya__button tx-36-24 uppercase mb-16" href="cabinet-personal-data.html"
+                        style="line-height: 1;" aria-label="Личные данные">
+                        личные данные
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="idealnaya rd-upload" style="background-color: transparent;">
+                <div class="idealnaya__item accordeon mb-32">
+                  <div class="idealnaya__top idealnaya__top_center mb-32" style="gap: 20px;">
+                    <div class="idealnaya__icon idealnaya__icon_width" style="margin: 0;">
+                      <img src="." data-rd-image="./img/svg/decorative-star-dark.svg" width="61" height="58"
+                        title="Декоративная иконка" alt="Декоративная иконка">
+                    </div>
+                    <div class="idealnaya__content" style="padding-top: 0;">
+                      <a class="idealnaya__button tx-36-24 uppercase mb-16" href="cabinet-order.html"
+                        style="line-height: 1;" aria-label="Заказы">
+                        заказы
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="idealnaya rd-upload" style="background-color: transparent;">
+                <div class="idealnaya__item accordeon mb-32">
+                  <div class="idealnaya__top idealnaya__top_center mb-32" style="gap: 20px;">
+                    <div class="idealnaya__icon idealnaya__icon_width" style="margin: 0;">
+                      <img src="." data-rd-image="./img/svg/decorative-star-dark.svg" width="61" height="58"
+                        title="Декоративная иконка" alt="Декоративная иконка">
+                    </div>
+                    <div class="idealnaya__content" style="padding-top: 0;">
+                      <a class="idealnaya__button tx-36-24 uppercase mb-16" href="cabinet-deposit-card.html"
+                        style="line-height: 1;" aria-label="Депозитная карта">
+                        депозитная карта
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="idealnaya rd-upload" style="background-color: transparent;">
+                <div class="idealnaya__item accordeon mb-32">
+                  <div class="idealnaya__top idealnaya__top_center mb-32" style="gap: 20px;">
+                    <div class="idealnaya__icon idealnaya__icon_width" style="margin: 0;">
+                      <img src="." data-rd-image="./img/svg/decorative-star-dark.svg" width="61" height="58"
+                        title="Декоративная иконка" alt="Декоративная иконка">
+                    </div>
+                    <div class="idealnaya__content" style="padding-top: 0;">
+                      <a class="idealnaya__button tx-36-24 uppercase mb-16" href="cabinet-address.html"
+                        style="line-height: 1;" aria-label="Адреса">
+                        адреса
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cabinet__menu-bottom scroll">
+              <div class="idealnaya rd-upload" style="background-color: transparent;">
+                <div class="idealnaya__item accordeon mb-32">
+                  <div class="idealnaya__top idealnaya__top_center mb-32" style="gap: 20px;">
+                    <div class="idealnaya__icon idealnaya__icon_width" style="margin: 0;">
+                      <img src="." data-rd-image="./img/svg/decorative-star-dark.svg" width="61" height="58"
+                        title="Декоративная иконка" alt="Декоративная иконка">
+                    </div>
+                    <div class="idealnaya__content" style="padding-top: 0;">
+                      <a class="idealnaya__button tx-36-24 uppercase mb-16" href="cabinet-basket.html"
+                        style="line-height: 1;" aria-label="Корзина">
+                        корзина
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="idealnaya rd-upload" style="background-color: transparent;">
+                <div class="idealnaya__item accordeon mb-32">
+                  <div class="idealnaya__top idealnaya__top_center mb-32" style="gap: 20px;">
+                    <div class="idealnaya__icon idealnaya__icon_width" style="margin: 0;">
+                      <img src="." data-rd-image="./img/svg/decorative-star-dark.svg" width="61" height="58"
+                        title="Декоративная иконка" alt="Декоративная иконка">
+                    </div>
+                    <div class="idealnaya__content" style="padding-top: 0;">
+                      <a class="idealnaya__button active tx-36-24 uppercase mb-16" href="cabinet-favorite.html"
+                        style="line-height: 1;" aria-label="Избранное">
+                        избранное
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cabinet__content">
+            <div class="cabinet__bottom">
+              <div class="cabinet__bottom-top mb-64-32">
+                <h1 class="cabinet__subtitle tx-64-32 MinionPro" style="color: var(--main);">
+                  Избранное
+                </h1>
+                <a class="cabinet__link but but_background MinionPro" href="catalog.html"
+                  aria-label="Перейти в каталог">
+                  перейти в каталог
+                </a>
+              </div>
+              <!-- <div class="cabinet__noorder tx-main">
+                В избранном ничего нет
+              </div> -->
+              <ul class="cabinet__list mb-32" aria-label="Заказы">
+                <li class="cabinet__item mb-32-64 cabinet-card">
+                  <div class="cabinet-card__image">
+                    <img class="img-cover" src="." data-rd-image="./img/work.webp" width="336" height="336"
+                      title="Бренд" alt="Бренд">
+                  </div>
+                  <div class="cabinet-card__info">
+                    <div class="cabinet-card__brand tx-36-24 mb-16 MinionPro">
+                      БРЕНД
+                    </div>
+                    <div class="cabinet-card__name mb-16 tx-main MinionPro">
+                      Название FDFFFxxkdk
+                    </div>
+                    <p class="cabinet-card__descr tx-main MinionPro mb-16">
+                      описание о том что это такое (кратко, например туалетная вода,30 мл)
+                    </p>
+                    <a class="cabinet-card__link but MinionPro" href="detail-product.html" aria-label="Подробнее">
+                      Подробнее
+                    </a>
+                  </div>
+                  <div class="cabinet-card__right">
+                    <div class="cabinet-card__price MinionPro tx-main italic">
+                      <span>10</span> руб
+                    </div>
+                    <button class="cabinet-card__add-cart active" aria-label="Добавить в корзину">
+                      <img src="." data-rd-image="img/svg/basket.svg" width="50" height="50" title="Корзина"
+                        alt="Корзина">
+                      <img src="." data-rd-image="img/svg/basket-active.svg" width="50" height="50" title="Корзина"
+                        alt="Корзина">
+                    </button>
+                  </div>
+                  <button class="cabinet-card__remove" aria-label="Удалить">
+                    <svg width="24" height="24" fill="currentColor">
+                      <use xlink:href="./img/sprites/sprites.svg#exit"></use>
+                    </svg>
+                  </button>
+                </li>
+                <li class="cabinet__item mb-32-64 cabinet-card">
+                  <div class="cabinet-card__image">
+                    <img class="img-cover" src="." data-rd-image="./img/work.webp" width="336" height="336"
+                      title="Бренд" alt="Бренд">
+                  </div>
+                  <div class="cabinet-card__info">
+                    <div class="cabinet-card__brand tx-36-24 mb-16 MinionPro">
+                      БРЕНД
+                    </div>
+                    <div class="cabinet-card__name mb-16 tx-main MinionPro">
+                      Название FDFFFxxkdk
+                    </div>
+                    <p class="cabinet-card__descr tx-main MinionPro mb-16">
+                      описание о том что это такое (кратко, например туалетная вода,30 мл)
+                    </p>
+                    <a class="cabinet-card__link but MinionPro" href="detail-product.html" aria-label="Подробнее">
+                      Подробнее
+                    </a>
+                  </div>
+                  <div class="cabinet-card__right">
+                    <div class="cabinet-card__price MinionPro tx-main italic">
+                      <span>10</span> руб
+                    </div>
+                    <button class="cabinet-card__add-cart" aria-label="Добавить в корзину">
+                      <img src="." data-rd-image="img/svg/basket.svg" width="50" height="50" title="Корзина"
+                        alt="Корзина">
+                      <img src="." data-rd-image="img/svg/basket-active.svg" width="50" height="50" title="Корзина"
+                        alt="Корзина">
+                    </button>
+                  </div>
+                  <button class="cabinet-card__remove" aria-label="Удалить">
+                    <svg width="24" height="24" fill="currentColor">
+                      <use xlink:href="./img/sprites/sprites.svg#exit"></use>
+                    </svg>
+                  </button>
+                </li>
+              </ul>
+              <ul class="pagination mb-64" aria-label="Пагинация страниц">
+                <li>
+                  <a class="pagination__link tx-main MinionPro active pag" href="#!" aria-label="Номер страницы: 1">
+                    1
+                  </a>
+                </li>
+                <li>
+                  <a class="pagination__link tx-main MinionPro pag" href="#!" aria-label="Номер страницы: 1">
+                    2
+                  </a>
+                </li>
+                <li>
+                  <a class="pagination__link tx-main MinionPro pag" href="#!" aria-label="Номер страницы: 1">
+                    3
+                  </a>
+                </li>
+              </ul>
+
+              <script>
+                document.addEventListener("click", function (e) {
+
+                  const elementInteractive = e.target;
+
+                  if (elementInteractive.closest(".cabinet-card__add-cart")) {
+                    if (!elementInteractive.closest(".cabinet-card__add-cart").classList.contains('active')) {
+                      elementInteractive.closest(".cabinet-card__add-cart").classList.add("active")
+                      // если элемент не в корзине то происходит добавление
+                    } else {
+                      elementInteractive.closest(".cabinet-card__add-cart").classList.remove("active")
+                      // если элемент в корзине то происходит удаление
+                    }
+                  }
+
+                  if (elementInteractive.closest(".cabinet-card__remove")) {
+                    document.querySelector(".remove-popup") ? document.querySelector(".remove-popup").classList.add(
+                      "active") : "";
+                  }
+
+                  if (elementInteractive.closest(".remove-popup__close")) {
+                    document.querySelector(".remove-popup") ? document.querySelector(".remove-popup").classList
+                      .remove(
+                        "active") : "";
+                  }
+
+                  if (elementInteractive.closest(".remove-popup__button_cancel")) {
+                    document.querySelector(".remove-popup") ? document.querySelector(".remove-popup").classList
+                      .remove(
+                        "active") : "";
+                  }
+
+                  //  тут происходит код если пользователь подтверждает удаление
+                  // if (elementInteractive.closest(".remove-popup__button_remove")) {
+                  //   document.querySelector(".remove-popup") ? document.querySelector(".remove-popup").classList
+                  //     .remove("active") : "";
+
+
+                  // тут код писать
+                  // }
+                })
+              </script>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Конец cabinet -->
+
+      <!-- Начало popular -->
+      <section class="popular mb-128-64">
+        <div class="popular__container container">
+          <h2 class="popular__title uppercase mb-32 tx-36-24">
+            Похожие товары
+          </h2>
+          <ul class="popular__list cards rd-upload" aria-label="Популярные товары">
+            <li class="cards__card">
+              <div class="cards__content">
+                <div class="cards__image mb-16">
+                  <img class="img-cover" src="." data-rd-image="./img/no-foto.webp" width="250" height="213"
+                    title="Набор уходовой косметики" alt="Набор уходовой косметики">
+                </div>
+                <div class="cards__name tx-main MinionPro mb-32">
+                  Набор уходовой косметики Набор уходовой косметики
+                </div>
+                <div class="cards__price mb-4 tx-main MinionPro italic">
+                  9 999 руб
+                </div>
+                <a class="cards__link but-circle" href="#" aria-label="Купить">
+                  <span>Купить</span>
+                  <span>
+                    <img src="." data-rd-image="./img/svg/decorative-circle-button.svg" width="40" height="40"
+                      title="Декоративный круг" alt="Декоративный круг">
+                  </span>
+                </a>
+              </div>
+            </li>
+            <li class="cards__card">
+              <div class="cards__content">
+                <div class="cards__image mb-16">
+                  <img class="img-cover" src="." data-rd-image="./img/popular/popular-1.webp" width="250" height="213"
+                    title="Набор уходовой косметики" alt="Набор уходовой косметики">
+                </div>
+                <div class="cards__name tx-main MinionPro mb-32">
+                  Набор уходовой косметики Набор уходовой косметики
+                </div>
+                <div class="cards__price mb-4 tx-main MinionPro italic">
+                  9 999 руб
+                </div>
+                <a class="cards__link but-circle" href="#" aria-label="Купить">
+                  <span>Купить</span>
+                  <span>
+                    <img src="." data-rd-image="./img/svg/decorative-circle-button.svg" width="40" height="40"
+                      title="Декоративный круг" alt="Декоративный круг">
+                  </span>
+                </a>
+              </div>
+            </li>
+            <li class="cards__card">
+              <div class="cards__content">
+                <div class="cards__image mb-16">
+                  <img class="img-cover" src="." data-rd-image="./img/akcii/akcii-3.webp" width="250" height="213"
+                    title="Набор уходовой косметики" alt="Набор уходовой косметики">
+                </div>
+                <div class="cards__name tx-main MinionPro mb-32">
+                  Набор уходовой косметики Набор уходовой косметики
+                </div>
+                <div class="cards__price mb-4 tx-main MinionPro italic">
+                  9 999 руб
+                </div>
+                <a class="cards__link but-circle" href="#" aria-label="Купить">
+                  <span>Купить</span>
+                  <span>
+                    <img src="." data-rd-image="./img/svg/decorative-circle-button.svg" width="40" height="40"
+                      title="Декоративный круг" alt="Декоративный круг">
+                  </span>
+                </a>
+              </div>
+            </li>
+            <li class="cards__card">
+              <div class="cards__content">
+                <div class="cards__image mb-16">
+                  <img class="img-cover" src="." data-rd-image="./img/popular/popular-2.webp" width="250" height="213"
+                    title="Набор уходовой косметики" alt="Набор уходовой косметики">
+                </div>
+                <div class="cards__name tx-main MinionPro mb-32">
+                  Набор уходовой косметики Набор уходовой косметики
+                </div>
+                <div class="cards__price mb-4 tx-main MinionPro italic">
+                  9 999 руб
+                </div>
+                <a class="cards__link but-circle" href="#" aria-label="Купить">
+                  <span>Купить</span>
+                  <span>
+                    <img src="." data-rd-image="./img/svg/decorative-circle-button.svg" width="40" height="40"
+                      title="Декоративный круг" alt="Декоративный круг">
+                  </span>
+                </a>
+              </div>
+            </li>
+            <li class="cards__card">
+              <div class="cards__content">
+                <div class="cards__image mb-16">
+                  <img class="img-cover" src="." data-rd-image="./img/popular/popular-3.webp" width="250" height="213"
+                    title="Набор уходовой косметики" alt="Набор уходовой косметики">
+                </div>
+                <div class="cards__name tx-main MinionPro mb-32">
+                  Набор уходовой косметики Набор уходовой косметики
+                </div>
+                <div class="cards__price mb-4 tx-main MinionPro italic">
+                  9 999 руб
+                </div>
+                <a class="cards__link but-circle" href="#" aria-label="Купить">
+                  <span>Купить</span>
+                  <span>
+                    <img src="." data-rd-image="./img/svg/decorative-circle-button.svg" width="40" height="40"
+                      title="Декоративный круг" alt="Декоративный круг">
+                  </span>
+                </a>
+              </div>
+            </li>
+            <li class="cards__card">
+              <div class="cards__content">
+                <div class="cards__image mb-16">
+                  <img class="img-cover" src="." data-rd-image="./img/popular/popular-4.webp" width="250" height="213"
+                    title="Набор уходовой косметики" alt="Набор уходовой косметики">
+                </div>
+                <div class="cards__name tx-main MinionPro mb-32">
+                  Набор уходовой косметики Набор уходовой косметики
+                </div>
+                <div class="cards__price mb-4 tx-main MinionPro italic">
+                  9 999 руб
+                </div>
+                <a class="cards__link but-circle" href="#" aria-label="Купить">
+                  <span>Купить</span>
+                  <span>
+                    <img src="." data-rd-image="./img/svg/decorative-circle-button.svg" width="40" height="40"
+                      title="Декоративный круг" alt="Декоративный круг">
+                  </span>
+                </a>
+              </div>
+            </li>
+            <li class="cards__card">
+              <div class="cards__content">
+                <div class="cards__image mb-16">
+                  <img class="img-cover" src="." data-rd-image="./img/popular/popular-5.webp" width="250" height="213"
+                    title="Набор уходовой косметики" alt="Набор уходовой косметики">
+                </div>
+                <div class="cards__name tx-main MinionPro mb-32">
+                  Набор уходовой косметики Набор уходовой косметики
+                </div>
+                <div class="cards__price mb-4 tx-main MinionPro italic">
+                  9 999 руб
+                </div>
+                <a class="cards__link but-circle" href="#" aria-label="Купить">
+                  <span>Купить</span>
+                  <span>
+                    <img src="." data-rd-image="./img/svg/decorative-circle-button.svg" width="40" height="40"
+                      title="Декоративный круг" alt="Декоративный круг">
+                  </span>
+                </a>
+              </div>
+            </li>
+            <li class="cards__card">
+              <div class="cards__content">
+                <div class="cards__image mb-16">
+                  <img class="img-cover" src="." data-rd-image="./img/popular/popular-6.webp" width="250" height="213"
+                    title="Набор уходовой косметики" alt="Набор уходовой косметики">
+                </div>
+                <div class="cards__name tx-main MinionPro mb-32">
+                  Набор уходовой косметики Набор уходовой косметики
+                </div>
+                <div class="cards__price mb-4 tx-main MinionPro italic">
+                  9 999 руб
+                </div>
+                <a class="cards__link but-circle" href="#" aria-label="Купить">
+                  <span>Купить</span>
+                  <span>
+                    <img src="." data-rd-image="./img/svg/decorative-circle-button.svg" width="40" height="40"
+                      title="Декоративный круг" alt="Декоративный круг">
+                  </span>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- Конец popular -->
+
+      <!-- Начало what-me -->
+      <section class="what-me what-me_beforeborder pt-128-64 pb-64">
+        <div class="what-me__inner">
+          <div class="decor decor_3 rd-upload">
+            <img src="." data-rd-image="./img/decorative-image.webp" width="336" height="336"
+              title="Декоративное изображение" alt="Декоративное изображение">
+          </div>
+          <div class="container">
+            <h2 class="what-me__title uppercase tx-64-32 mb-64">
+              Почему большинство <span>выбирают нас</span>
+            </h2>
+            <ul class="what-me__list rd-upload" aria-label="Почему большинство выбирают нас">
+              <li class="what-me__item mb-24">
+                <div class="what-me__icon">
+                  <img src="." data-rd-image="./img/svg/decorative-star-dark.svg" width="50" height="50"
+                    title="Декоративная тёмная звезда" alt="Декоративная тёмная звезда">
+                </div>
+                <div class="what-me__content">
+                  <div class="what-me__subtitle uppercase tx-36-24 mb-16">
+                    Сертифицированная косметика
+                  </div>
+                  <div class="what-me__texts">
+                    <p class="what-me__text tx-main mb-8">
+                      На нашем сайте и в наших салонах вы можете ознакомится с большим количеством качественной и
+                      проверенной косметики по уходу за собой
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="what-me__item mb-24">
+                <div class="what-me__icon">
+                  <img src="." data-rd-image="./img/svg/decorative-star-dark.svg" width="50" height="50"
+                    title="Декоративная тёмная звезда" alt="Декоративная тёмная звезда">
+                </div>
+                <div class="what-me__content">
+                  <div class="what-me__subtitle uppercase tx-36-24 mb-16">
+                    Быстрая доставка
+                  </div>
+                  <div class="what-me__texts">
+                    <p class="what-me__text tx-main mb-8">
+                      На нашем сайте и в наших салонах вы можете ознакомится с большим количеством качественной и
+                      проверенной косметики по уходу за собой
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="what-me__item mb-24">
+                <div class="what-me__icon">
+                  <img src="." data-rd-image="./img/svg/decorative-star-dark.svg" width="50" height="50"
+                    title="Декоративная тёмная звезда" alt="Декоративная тёмная звезда">
+                </div>
+                <div class="what-me__content">
+                  <div class="what-me__subtitle uppercase tx-36-24 mb-16">
+                    Удобство в подборе ухода
+                  </div>
+                  <div class="what-me__texts">
+                    <p class="what-me__text tx-main mb-8">
+                      На нашем сайте и в наших салонах вы можете ознакомится с большим количеством качественной и
+                      проверенной косметики по уходу за собой
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="what-me__item mb-24">
+                <div class="what-me__icon">
+                  <img src="." data-rd-image="./img/svg/decorative-star-dark.svg" width="50" height="50"
+                    title="Декоративная тёмная звезда" alt="Декоративная тёмная звезда">
+                </div>
+                <div class="what-me__content">
+                  <div class="what-me__subtitle uppercase tx-36-24 mb-16">
+                    Легкое оформление заказа
+                  </div>
+                  <div class="what-me__texts">
+                    <p class="what-me__text tx-main mb-8">
+                      На нашем сайте и в наших салонах вы можете ознакомится с большим количеством качественной и
+                      проверенной косметики по уходу за собой
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- Конец what-me -->
+
+      <!-- Начало wrapper-form -->
+      <section class="wrapper-form wrapper-form_before pt-64-0 pb-64 rd-upload">
+        <div class="container">
+          <h2 class="wrapper-form__title uppercase tx-36-24 mb-44">
+            Остались вопросы?
+          </h2>
+          <div class="wrapper-form__content content-form">
+            <form class="wrapper-form__form" method="POST" action="#!" id="ask_form" name="ask_form" autocomplete="off"
+              aria-label="Задайте вопрос">
+              <input type="hidden" name="Откуда пришло письмо" value="Форма: Задайте вопрос">
+              <div class="wrapper-form__top mb-16">
+                <div class="wrapper-form__inputs">
+                  <label class="wrapper-form__label" for="ask_name">
+                    <span class="input-circle-decor"></span>
+                    <input class="wrapper-form__input input" type="text" name="Имя:" id="ask_name" placeholder="Имя"
+                      required aria-label="Имя">
+                  </label>
+                  <label class="wrapper-form__label" for="ask_tel">
+                    <span class="input-circle-decor"></span>
+                    <input class="wrapper-form__input input" type="tel" name="Номер_телефона:" id="ask_tel"
+                      placeholder="Номер телефона" required aria-label="Номер телефона">
+                  </label>
+                </div>
+                <button class="wrapper-form__button but MinionPro" type="submit" aria-label="Отправить запрос">
+                  отправить запрос
+                </button>
+              </div>
+              <div class="wrapper-form__checkboxs">
+                <div class="wrapper-checkbox tx-16 OpenSans mb-16">
+                  <input class="wrapper-checkbox__checkbox inf-pol" type="checkbox" name="Информационная политика">
+                  <span class="wrapper-checkbox__decor"></span>
+                  Подтверждаю, что ознакомлен(а) с Информационной политикой
+                </div>
+                <div class="wrapper-checkbox tx-16 OpenSans">
+                  <input class="wrapper-checkbox__checkbox ysl-pers-dan" type="checkbox"
+                    name="Условия обработки персональных данных">
+                  <span class="wrapper-checkbox__decor"></span>
+                  Согласен(на) с Условиями обработки персональных данных
+                </div>
+              </div>
+            </form>
+
+            <script>
+              const askForm = document.querySelector("#ask_form");
+              const askFormTel = askForm.querySelector("input[type='tel']");
+              const askFormsMask = new Inputmask("+7(999)999-99-99");
+              askFormsMask.mask(askFormTel);
+
+              const validatorAsk = new JustValidate(askForm, {});
+
+              validatorAsk
+                .addField('#ask_name', [{ // можно использовать классы вместо ид
+                  rule: 'required',
+                  errorMessage: 'Введите ваше имя',
+                }])
+                .addField(askForm.querySelector(".inf-pol"), [{
+                  validator: (value) => { // Своя проверка, будет работать как rule
+                    const ckeckPoint = askForm.querySelector(".inf-pol");
+                    return Boolean(ckeckPoint.checked == true)
+                  },
+                  errorMessage: 'Обязательно',
+                }, ])
+                .addField(askForm.querySelector(".ysl-pers-dan"), [{
+                  validator: (value) => { // Своя проверка, будет работать как rule
+                    const ckeckPoint = askForm.querySelector(".ysl-pers-dan");
+                    return Boolean(ckeckPoint.checked == true)
+                  },
+                  errorMessage: 'Обязательно',
+                }, ])
+                .addField('#ask_tel', [{
+                    rule: 'required',
+                    value: true,
+                    errorMessage: 'Введите ваш телефон',
+                  },
+                  {
+                    rule: 'function',
+                    validator: function () {
+                      const phone = askFormTel.inputmask.unmaskedvalue();
+                      return phone.length === 10;
+                    },
+                    errorMessage: 'Введите корректный телефон',
+                  },
+                ])
+                .onSuccess((event) => { // Если форма проходит валидацию то происходит код ниже
+                  document.querySelector(".status-send") ? document.querySelector(".status-send").classList.add(
+                      "active") :
+                    '';
+
+                  document.querySelector(".status-send-preload") ? document.querySelector(".status-send-preload")
+                    .classList
+                    .add("active") : '';
+
+                  let formData = new FormData(event.target);
+
+                  let xhr = new XMLHttpRequest();
+
+                  xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) {
+                      if (xhr.status === 200) {
+                        document.querySelector(".status-send-preload") ? document.querySelector(
+                            ".status-send-preload")
+                          .classList.remove("active") : '';
+                        document.querySelector(".status-send-okay") ? document.querySelector(".status-send-okay")
+                          .classList
+                          .add("active") : '';
+                      } else {
+                        document.querySelector(".status-send-preload") ? document.querySelector(
+                            ".status-send-preload")
+                          .classList.remove("active") : '';
+                        document.querySelector(".status-send-error") ? document.querySelector(".status-send-error")
+                          .classList.add("active") : '';
+                      }
+                    }
+                  }
+
+                  xhr.open('POST', './mail.php', true);
+                  xhr.send(formData);
+
+                  event.target.reset();
+                })
+            </script>
+
+          </div>
+        </div>
+      </section>
+      <!-- Конец wrapper-form -->
+
+      <!-- Начало reviews -->
+      <section class="reviews rd-upload pt-64-0 pb-64">
+        <div class="container">
+          <h2 class="reviews__title mb-32 uppercase tx-36-24">
+            Отзывы
+          </h2>
+          <div class="reviews-slider swiper mb-32">
+            <ul class="swiper-wrapper" aria-label="Отзывы">
+              <li class="reviews-slider__slide swiper-slide">
+                <p class="reviews-slider__text tx-main mb-16 MinionPro">
+                  Цетр врачебной косметологии. Побывала здесь впервые, благодаря подарочному сертификату на четыре
+                  процедуры. Очень и очень понравилось! Все процедуры прошли на одном дыхании, не смотря на то, что
+                  провела там несколько часов. Уютная атмосфера, вежливый персонал, отличные специалисты. Хочется...
+                  Цетр врачебной косметологии. Побывала здесь впервые, благодаря подарочному сертификату на четыре
+                  процедуры. Очень и очень понравилось! Все процедуры прошли на одном дыхании, не смотря на то, что
+                  провела там несколько часов. Уютная атмосфера, вежливый персонал, отличные специалисты. Хочется...
+                </p>
+                <button class="reviews-slider__read circle tx-main MinionPro" aria-label="Читать еще">
+                  <span>читать еще</span>
+                  <span>свернуть</span>
+                </button>
+              </li>
+              <li class="reviews-slider__slide swiper-slide">
+                <p class="reviews-slider__text tx-main mb-16 MinionPro">
+                  Самый лучший центр врачебной косметологиив Сибири. Уютная и стильная обстановка, вежливые
+                  администраторы и профессиональные врачи! Решили проблему, которую никто не мог решить. Однозначно,
+                  рекомендую!
+                </p>
+                <button class="reviews-slider__read circle tx-main MinionPro" aria-label="Читать еще">
+                  <span>читать еще</span>
+                  <span>свернуть</span>
+                </button>
+              </li>
+              <li class="reviews-slider__slide swiper-slide">
+                <p class="reviews-slider__text tx-main mb-16 MinionPro">
+                  В вопросе косметологии посещаю только эту клинику, хоть и редко получается. Во-первых, атмосфера,
+                  интерьер, всё высокого уровня! Во-вторых, специалисты, к кому бы я не записывалась на процедуру, все
+                  профессионалы своего дела!
+                </p>
+                <button class="reviews-slider__read circle tx-main MinionPro" aria-label="Читать еще">
+                  <span>читать еще</span>
+                  <span>свернуть</span>
+                </button>
+              </li>
+              <li class="reviews-slider__slide swiper-slide">
+                <p class="reviews-slider__text tx-main mb-16 MinionPro">
+                  Уютное место расположенное в удобном месте. Все сделано для комфорта посетителей, от услады глаз до
+                  полученных услуг. При входе- отдельные тапочки или бахилы, милые администраторы и мягкие диваны. В
+                  кабинетах- свежо, чисто и просто приятно находиться. Весь персонал очень дружелюбный и...
+                  Цетр врачебной косметологии. Побывала здесь впервые, благодаря подарочному сертификату на четыре
+                  процедуры. Очень и очень понравилось! Все процедуры прошли на одном дыхании, не смотря на то, что
+                  провела там несколько часов. Уютная атмосфера, вежливый персонал, отличные специалисты. Хочется...
+                </p>
+                <button class="reviews-slider__read circle tx-main MinionPro" aria-label="Читать еще">
+                  <span>читать еще</span>
+                  <span>свернуть</span>
+                </button>
+              </li>
+            </ul>
+            <div class="reviews-slider__scrollbar scrollbar reviews-slider-scrollbar"></div>
+          </div>
+          <a class="reviews__link but MinionPro" href="#" target="_blank" aria-label="Написать отзыв">
+            написать отзыв
+          </a>
+        </div>
+      </section>
+      <!-- Конец reviews -->
+
+      <!-- Начало contacts -->
+      <section class="contacts pb-128-64">
+        <div class="container">
+          <h2 class="contacts__title tx-36-24 uppercase mb-16-32">
+            Контакты
+          </h2>
+          <div class="contacts__top mb-128-64">
+            <div class="contacts__top-left">
+              <div class="contacts__subtitle tx-36-24 uppercase mb-32">
+                "Галерея Красоты" — <br>
+                клиника авторской <br>
+                косметологии
+              </div>
+              <address class="contacts__address">
+                <div class="contacts__address-tel mb-64-32">
+                  <a class="tx-main mb-12 MinionPro" href="tel:+89132818688" aria-label="8 913 281‒86‒88">8 913
+                    281‒86‒88</a>
+                  <a class="tx-main mb-12 MinionPro" href="tel:+89132818688" aria-label="8 913 281‒86‒88">8 913
+                    281‒86‒88</a>
+                </div>
+                <div class="contacts__address-texts">
+                  <div class="tx-main mb-12">
+                    Ежедневно с 10:00 до 20:00
+                  </div>
+                  <div class="tx-main">
+                    г. Кемерово, проспект Ленина 89, 414 кабинет
+                  </div>
+                </div>
+              </address>
+            </div>
+            <div class="contacts__map box-shadow"></div>
+          </div>
+          <div class="wrapper-form" style="background-color: transparent;">
+            <div class="wrapper-form__subtitle OpenSans tx-main mb-32">
+              Подпишись на нашу рассылку, чтоб быть в курсе новинок, скидок и акций ГАЛЕРЕИ КРАСОТЫ
+            </div>
+            <div class="wrapper-form__content content-form">
+              <form class="wrapper-form__form" method="POST" action="#!" id="mailing_form" name="mailing_form"
+                autocomplete="off" aria-label="Подпишись на рассылку">
+                <input type="hidden" name="Откуда пришло письмо" value="Форма: Подпишись на рассылку">
+                <div class="wrapper-form__top mb-16">
+                  <div class="wrapper-form__inputs">
+                    <label class="wrapper-form__label" for="mailing_name">
+                      <span class="input-circle-decor"></span>
+                      <input class="wrapper-form__input input" type="text" name="Имя:" id="mailing_name"
+                        placeholder="Имя" required aria-label="Имя">
+                    </label>
+                    <label class="wrapper-form__label" for="mailing_tel">
+                      <span class="input-circle-decor"></span>
+                      <input class="wrapper-form__input input" type="tel" name="Номер_телефона:" id="mailing_tel"
+                        placeholder="Номер телефона" required aria-label="Номер телефона">
+                    </label>
+                  </div>
+                  <button class="wrapper-form__button but MinionPro" style="min-width: 218px;" type="submit"
+                    aria-label="Подписаться">
+                    подписаться
+                  </button>
+                </div>
+                <div class="wrapper-form__checkboxs">
+                  <div class="wrapper-checkbox tx-16 OpenSans mb-16">
+                    <input class="wrapper-checkbox__checkbox inf-pol" type="checkbox" name="Информационная политика">
+                    <span class="wrapper-checkbox__decor"></span>
+                    Подтверждаю, что ознакомлен(а) с Информационной политикой
+                  </div>
+                  <div class="wrapper-checkbox tx-16 OpenSans">
+                    <input class="wrapper-checkbox__checkbox ysl-pers-dan" type="checkbox"
+                      name="Условия обработки персональных данных">
+                    <span class="wrapper-checkbox__decor"></span>
+                    Согласен(на) с Условиями обработки персональных данных
+                  </div>
+                </div>
+              </form>
+
+              <script>
+                const mailingForm = document.querySelector("#mailing_form");
+                const mailingFormTel = mailingForm.querySelector("input[type='tel']");
+                const mailingFormsMask = new Inputmask("+7(999)999-99-99");
+                mailingFormsMask.mask(mailingFormTel);
+
+                const validatorMailing = new JustValidate(mailingForm, {});
+
+                validatorMailing
+                  .addField('#mailing_name', [{ // можно использовать классы вместо ид
+                    rule: 'required',
+                    errorMessage: 'Введите ваше имя',
+                  }])
+                  .addField(mailingForm.querySelector(".inf-pol"), [{
+                    validator: (value) => { // Своя проверка, будет работать как rule
+                      const ckeckPoint = mailingForm.querySelector(".inf-pol");
+                      return Boolean(ckeckPoint.checked == true)
+                    },
+                    errorMessage: 'Обязательно',
+                  }, ])
+                  .addField(mailingForm.querySelector(".ysl-pers-dan"), [{
+                    validator: (value) => { // Своя проверка, будет работать как rule
+                      const ckeckPoint = mailingForm.querySelector(".ysl-pers-dan");
+                      return Boolean(ckeckPoint.checked == true)
+                    },
+                    errorMessage: 'Обязательно',
+                  }, ])
+                  .addField('#mailing_tel', [{
+                      rule: 'required',
+                      value: true,
+                      errorMessage: 'Введите ваш телефон',
+                    },
+                    {
+                      rule: 'function',
+                      validator: function () {
+                        const phone = mailingFormTel.inputmask.unmaskedvalue();
+                        return phone.length === 10;
+                      },
+                      errorMessage: 'Введите корректный телефон',
+                    },
+                  ])
+                  .onSuccess((event) => { // Если форма проходит валидацию то происходит код ниже
+
+                    document.querySelector(".status-send") ? document.querySelector(".status-send").classList.add(
+                      "active") : '';
+
+                    document.querySelector(".status-send-preload") ? document.querySelector(".status-send-preload")
+                      .classList.add("active") : '';
+
+                    let formData = new FormData(event.target);
+
+                    let xhr = new XMLHttpRequest();
+
+                    xhr.onreadystatechange = function () {
+                      if (xhr.readyState === 4) {
+                        if (xhr.status === 200) {
+                          document.querySelector(".status-send-preload") ? document.querySelector(
+                            ".status-send-preload").classList.remove("active") : '';
+                          document.querySelector(".status-send-okay") ? document.querySelector(".status-send-okay")
+                            .classList.add("active") : '';
+                        } else {
+                          document.querySelector(".status-send-preload") ? document.querySelector(
+                            ".status-send-preload").classList.remove("active") : '';
+                          document.querySelector(".status-send-error") ? document.querySelector(
+                            ".status-send-error").classList.add("active") : '';
+                        }
+                      }
+                    }
+
+                    xhr.open('POST', './mail.php', true);
+                    xhr.send(formData);
+
+                    event.target.reset();
+
+                  })
+              </script>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Конец contacts -->
+    </main>
+    <!-- Начало footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__top mb-32">
+          <div class="footer__left">
+            <nav class="nav nav_footer" aria-label="Навигация сайта">
+              <ul class="nav__list nav__list_footer" aria-label="Список навигации сайта">
+                <li class="nav__item">
+                  <div class="nav__title uppercase tx-16 mb-16 OpenSans fw-600">
+                    О компании
+                  </div>
+                  <ul class="nav__sublist" aria-label="Список навигации">
+                    <li class="mb-16">
+                      <a class="nav__link nav__link_hover OpenSans nav__link_footer tx-14" href="about.html"
+                        aria-label="О нас">
+                        О нас
+                      </a>
+                    </li>
+                    <li class="mb-16">
+                      <a class="nav__link nav__link_hover OpenSans nav__link_footer tx-14" href="catalog.html"
+                        aria-label="Каталог">
+                        Каталог
+                      </a>
+                    </li>
+                    <li class="mb-16">
+                      <a class="nav__link nav__link_hover OpenSans nav__link_footer tx-14" href="services.html"
+                        aria-label="Услуги">
+                        Услуги
+                      </a>
+                    </li>
+                    <li class="mb-16">
+                      <a class="nav__link nav__link_hover OpenSans nav__link_footer tx-14" href="vacancies.html"
+                        aria-label="Вакансии">
+                        Вакансии
+                      </a>
+                    </li>
+                    <li class="mb-16">
+                      <a class="nav__link nav__link_hover OpenSans nav__link_footer tx-14" href="specialists.html"
+                        aria-label="Специалисты">
+                        Специалисты
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- <li class="nav__item"> -->
+                <!-- <div class="nav__title uppercase tx-16 mb-16 OpenSans fw-600"> -->
+                <!-- Гарантия и возврат -->
+                <!-- </div> -->
+                <!-- <ul class="nav__sublist" aria-label="Список навигации">
+                    <li>
+                      <a class="nav__link nav__link_hover nav__link_footer tx-14" href="#!" aria-label="">
+  
+                      </a>
+                    </li>
+                  </ul> -->
+                <!-- </li> -->
+                <li class="nav__item">
+                  <div class="nav__title uppercase tx-16 mb-16 OpenSans fw-600">
+                    Клиентам
+                  </div>
+                  <ul class="nav__sublist" aria-label="Список навигации">
+                    <li class="mb-16">
+                      <button class="login login_light OpenSans tx-14" href="#!" aria-label="Авторизация">
+                        Авторизация
+                      </button>
+                    </li>
+                    <!-- <li class="mb-16">
+                      <a class="nav__link nav__link_hover OpenSans nav__link_footer tx-14" href="#!"
+                        aria-label="Личный кабинет">
+                        Личный кабинет
+                      </a>
+                    </li> -->
+                    <li class="mb-16">
+                      <a class="nav__link nav__link_hover OpenSans nav__link_footer tx-14"
+                        href="payment-and-delivery.html" aria-label="Оплата и доставка">
+                        Оплата и доставка
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer__right">
+            <ul class="footer__soc mb-32">
+              <li>
+                <a class="footer__link" href="#" target="_blank" aria-label="Телеграм">
+                  <svg width="32" height="32" fill="currentColor">
+                    <use xlink:href="img/sprites/sprites.svg#telegram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a class="footer__link" href="#" target="_blank" aria-label="Инстаграм">
+                  <svg width="32" height="32" fill="currentColor">
+                    <use xlink:href="img/sprites/sprites.svg#instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a class="footer__link" href="#" target="_blank" aria-label="Вконтакте">
+                  <svg width="32" height="32" fill="currentColor">
+                    <use xlink:href="img/sprites/sprites.svg#vk"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+            <address class="footer__address">
+              <div class="footer__item mb-32">
+                <p class="OpenSans mb-16 tx-14">
+                  По вопросам о покупке и доставке:
+                </p>
+                <a class="OpenSans mb-16 tx-14" href="+89999999999" aria-label="8 999 999 99 99">
+                  8 999 999 99 99
+                </a>
+              </div>
+              <div class="footer__item mb-32">
+                <p class="OpenSans mb-16 tx-14">
+                  По вопросам о сотрудничестве:
+                </p>
+                <a class="OpenSans mb-16 tx-14" href="+89999999999" aria-label="8 999 999 99 99">
+                  8 999 999 99 99
+                </a>
+              </div>
+            </address>
+          </div>
+        </div>
+        <nav>
+          <ul class="footer__list">
+            <li>
+              <a class="tx-14 OpenSans" href="cookie.html" aria-label="Политика cookie">
+                Политика cookie
+              </a>
+            </li>
+            <li>
+              <a class="tx-14 OpenSans" href="policy.html" aria-label="Политика конфиденциальности">
+                Политика конфиденциальности
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+    <!-- Конец footer -->
+  </div>
+</body>
+
+</html>
